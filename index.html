@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shield Maidens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html" class="logo-link">
+            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="#">Get Involved</a>
+                <div class="dropdown-content">
+                    <a href="events.html">Events</a>
+                    <a href="news.html">News</a>
+                    <a href="partner.html">Partner with Us</a>
+                </div>
+            </div>
+            <a href="donate.html" class="highlight">Donate</a>
+        </div>
+    </nav>
+    
+    
+    <div id="eventPopup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2 id="eventTitle"></h2>
+        <p id="eventMessage"></p>
+        <a id="eventLink" href="#" target="_blank" style="display:none;">Join Event</a>
+        <button id="setReminder" style="display:none;" onclick="setReminder()">Set Reminder</button>
+    </div>
+</div>
+
+
+
+ 
+ <!-- Hero Section with Responsive Video -->
+
+<section class="hero">
+    <div class="video-container">
+      <video autoplay muted loop playsinline>
+        <source src="images/Purple.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="text-overlay">
+        <div class="message active">
+          <strong>Our Mission:</strong> We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.
+        </div>
+        <div class="message">
+          <strong>Our Vision:</strong> To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).
+        </div>
+        <div class="message">
+          <strong>Our History:</strong> Proud alumni of AGCCI by UN Women. After the coding camp, some joined Siemens EmpowerHER and received scholarships in cybersecurity. Shield Maidens was born to empower more young women.
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+<!-- About Us Section -->
+<section class="about-us">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="images/aboutus.png" alt="About Us">
+        </div>
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p> Shield Maidens was founded in 2024 by Sumaiyya Jumma and Maria Muneeni as a way of giving back to the community. As beneficiaries of UN Women, the African Girls Can Code Initiative (AGCCI), and Siemens EmpowerHER, they recognized the need to create a platform dedicated to advocacy, empowerment, and education.
+
+                At Shield Maidens, our mission is to educate young women and youth on digital safety while actively fighting against technology-facilitated gender-based violence (TFGBV). We are committed to fostering an inclusive world by advocating for gender equality, justice, and the protection of online spaces.
+                
+                Our goal is to empower individuals with the knowledge and tools needed to navigate the digital world safely, to amplify voices against gender-based violence, and to drive meaningful change through advocacy and education. Together, we stand for a safer, more inclusive future for all.</p>
+        </div>
+    </div>
+</section>
+
+
+
+    
+
+    
+    <!-- Learn to Be Safe Online Section -->
+    <section id="safety">
+        <h2>Learn to Be Safe Online</h2>
+        <div class="safety-cards">
+            <div class="card">
+                <h3>Strong Passwords</h3>
+                <p>Use unique and strong passwords for your accounts. Enable two-factor authentication for extra security.</p>
+            </div>
+            <div class="card">
+                <h3>Avoid Phishing</h3>
+                <p>Don't click on unknown links or emails. Verify sender identities before sharing personal information.</p>
+            </div>
+            <div class="card">
+                <h3>Privacy Settings</h3>
+                <p>Keep your social media accounts private. Limit who can see your personal information.</p>
+            </div>
+            <div class="card">
+                <h3>Seek Help</h3>
+                <p>If you experience online threats, report them immediately to the authorities or trusted organizations. Please contact Us or Get in touch with one of our Team</p>
+            </div>
+        </div>
+    </section>
+    <section id="what-we-do">
+        <h2>What We Do 🚀</h2>
+        <div class="what-we-do-container">
+            <div class="what-we-do-card">
+                <h3>Digital Safety & Awareness 🔐</h3>
+                <p>We empower individuals with the knowledge to stay safe online, identifying threats, protecting personal data, and using secure digital practices.</p>
+            </div>
+    
+            <div class="what-we-do-card">
+                <h3>TFGBV Prevention & Support 💜</h3>
+                <p>We actively fight against Technology-Facilitated Gender-Based Violence (TFGBV) by offering resources, support groups, and expert-led discussions.</p>
+            </div>
+    
+            <div class="what-we-do-card">
+                <h3>Innovation & Technology 🌍</h3>
+                <p>We harness the power of technology to drive positive change, making digital spaces safer and more inclusive.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <!-- Join Next Sessions -->
+<section id="next-session">
+    <h2>Join Our Next Sessions</h2>
+    <div class="session-container">
+        <div class="session-card">
+            <img src="images/event1.jpg" alt="Upcoming Event">
+            <p><strong>Topic:</strong> Technology-Facilitated Gender-Based Violence (TFGBV)</p>
+            <p>Don't miss our session! Join us to learn how to stay safe online.</p>
+            <a href="#" class="event-link">Click here to join</a>
+        </div>
+
+        <div class="session-card">
+            <img src="images/event 3.jpg" alt="Upcoming Event">
+            <p><strong>Topic:</strong> Cybersecurity Awareness for Women</p>
+            <p>Enhance your online security with expert advice.</p>
+            <a href="#" class="event-link">Click here to join</a>
+        </div>
+
+        <div class="session-card">
+            <img src="images/event2.jpg" alt="Upcoming Event">
+            <p><strong>Topic:</strong> Online Privacy & Digital Footprint</p>
+            <p>Learn how to protect your digital identity.</p>
+            <a href="#" class="event-link">Click here to join</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Our Team -->
+    
+<section id="team-intro">
+    <h2>Our Amazing Team</h2>
+    <p>Empowering and celebrating women in technology across Africa guiding Tech-Girls<br>to their Full Potential</p>
+</section>
+
+<section id="team">
+   
+    <div class="team-container">
+        <div class="team-member">
+            <img src="images/sumaiya.jpg" alt="Sumaiyya">
+            <div class="team-info">
+                <h3>Mary Adaya</h3>
+                <p>Founder / Data Privacy Specialist</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="images/maria.jpg" alt="Maria">
+            <div class="team-info">
+                <h3>Maria Muneeni</h3>
+                <p>Co-Founder / Digital Safety Trainer / Champion for PWDs Inclusivity</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="images/ruth.jpg" alt="Ruth">
+            <div class="team-info">
+                <h3>Ruth Jebitok</h3>
+                <p>Social Media Manager</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="images/upp.jpg" alt="Caren">
+            <div class="team-info">
+                <h3>Caren Jeruto</h3>
+                <p>Online Safety Advocate</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+
+    <div class="social-section">
+
+       <!-- LinkedIn -->
+<div class="social-box">
+    <div style="border: 1px solid #ddd; padding: 16px; border-radius: 8px; width: 300px; background: #fff; display: flex; align-items: center; gap: 12px;">
+      
+      <!-- LinkedIn Icon -->
+      <img src="https://static-exp1.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico" 
+           alt="LinkedIn Logo" 
+           style="width: 40px; height: 40px; border-radius: 4px;">
+  
+      <!-- Text and Link -->
+      <div>
+        <a href="https://www.linkedin.com/in/shield-maidens-47ab66329" target="_blank" style="text-decoration: none; color: #000;">
+          <strong>Shield Maidens</strong><br>
+          View our LinkedIn profile<br>
+          <span style="color: #0077b5; font-size: 13px;">linkedin.com/in/shield-maidens-47ab66329</span>
+        </a>
+      </div>
+  
+    </div>
+  </div>
+  
+    
+        <!-- Instagram -->
+        <div class="social-box">
+            <div class="follow-btn">
+                <a href="https://www.instagram.com/the_shield_maidens/" target="_blank"
+                   class="instagram-btn">
+                    Follow on Instagram
+                </a>
+            </div>
+            <iframe src="https://www.instagram.com/the_shield_maidens/embed" 
+                    width="100%" height="500" frameborder="0" scrolling="yes"></iframe>
+        </div>
+    
+        <!-- Twitter (X) -->
+    <!-- Twitter (X) -->
+<!-- Twitter Embed: Live Feed + Follow Button -->
+<div class="social-card twitter-card">
+    <div class="card-header">
+      <img src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="Twitter Logo" style="width: 32px;">
+      <strong>@_shield_maidens</strong>
+    </div>
+  
+    <!-- Twitter Timeline -->
+    <a class="twitter-timeline"
+       href="https://twitter.com/_shield_maidens"
+       data-height="400"
+       data-theme="light"
+       data-chrome="noheader nofooter noborders transparent"
+       data-dnt="true">
+      Tweets by @_shield_maidens
+    </a>
+  
+    <!-- Twitter Follow Button -->
+    <a href="https://twitter.com/_shield_maidens?ref_src=twsrc%5Etfw" 
+       class="twitter-follow-button"
+       data-show-count="false"
+       data-size="large">
+      Follow @_shield_maidens
+    </a>
+
+     <!-- Manually Embedded Recent Posts -->
+     
+
+        <blockquote class="twitter-tweet" data-theme="dark">
+          <a href="https://twitter.com/_shield_maidens/status/1911289276991492240" style="height: 50px;"></a>
+        </blockquote>
+
+    
+      </div>
+    </div>
+  </div>
+  
+    <!-- Twitter Script Loader -->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+  
+
+    
+
+    <!-- Contact Us -->
+    <div class="contact-container">
+        <div id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" action="submit_contact.php" method="POST">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+<input type="email" id="email" name="email" placeholder="Your Email" required>
+<textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+          
+        <p id="response"></p>
+        </div>
+    
+     
+         <!-- Mailing List Section -->
+<form id="mailing-list" method="POST">
+    <h2>Join Our Mailing List</h2>
+    <p>Be the first to know about upcoming Training Sessions, Events, and other related news.</p>
+    <input type="email" id="mailingEmail" name="mailingEmail" placeholder="Enter your email here" required>
+    <button type="submit">Stay updated</button>
+    <p id="mailingResponse"></p>
+  </form>
+  
+  
+ 
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Designed & Developed by Caren © 2025 |Shield Maidens | </p>
+        <a href="https://www.instagram.com/securegirl.uy/" target="_blank">Instagram</a>
+        <a href="https://ke.linkedin.com/in/secure-girls-47ab66329" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com/secureGirls" target="_blank">Twitter</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

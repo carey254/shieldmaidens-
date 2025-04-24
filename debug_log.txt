@@ -1,0 +1,12 @@
+NAME: , EMAIL: , MESSAGE: 
+NAME: , EMAIL: , MESSAGE: 
+NAME: caren jeruto, EMAIL: carenjeruto477@gmail.com, MESSAGE: i enjoyed the session
+NAME: , EMAIL: , MESSAGE: 
+NAME: , EMAIL: , MESSAGE: 
+NAME: caren jeruto, EMAIL: carenjeruto477@gmail.com, MESSAGE: i enjoyed the session
+NAME: , EMAIL: , MESSAGE: 
+NAME: caren jeruto, EMAIL: carenjeruto477@gmail.com, MESSAGE: i enjoyed the session
+NAME: caren jeruto, EMAIL: carenjeruto477@gmail.com, MESSAGE: i enjoyed the session
+SUBMIT: name=, email=, message=
+DB Conn Success
+DB Query Success
