@@ -111,44 +111,75 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   // Donate Page
-  document.addEventListener("DOMContentLoaded", () => {
-    const amountButtons = document.querySelectorAll(".amount-btn");
-    const customAmount = document.getElementById("customAmount");
-    const finalAmount = document.getElementById("finalAmount");
-    const summaryText = document.getElementById("summaryText");
-  
-    function updateAmount(amount) {
-      finalAmount.value = amount;
-      summaryText.innerHTML = `Selected donation: <strong>KES ${parseInt(amount).toLocaleString()}</strong>`;
-    }
-  
-    amountButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        amountButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
-        customAmount.value = "";
-        updateAmount(button.dataset.amount);
-      });
-    });
-  
-    customAmount.addEventListener("input", () => {
+// Donate Page
+document.addEventListener("DOMContentLoaded", () => {
+  const amountButtons = document.querySelectorAll(".amount-btn");
+  const customAmount = document.getElementById("customAmount");
+  const finalAmount = document.getElementById("finalAmount");
+  const summaryText = document.getElementById("summaryText");
+  const form = document.getElementById("donationForm");
+
+  function updateAmount(amount) {
+    finalAmount.value = amount;
+    summaryText.innerHTML = `Selected donation: <strong>KES ${parseInt(amount).toLocaleString()}</strong>`;
+  }
+
+  // Update amount when a preset button is clicked
+  amountButtons.forEach(button => {
+    button.addEventListener("click", () => {
       amountButtons.forEach(btn => btn.classList.remove("active"));
-      const value = parseInt(customAmount.value);
-      if (!isNaN(value) && value > 0) {
-        updateAmount(value);
-      } else {
-        updateAmount(0);
-      }
-    });
-  
-    const form = document.getElementById("donationForm");
-    form.addEventListener("submit", (e) => {
-      if (!finalAmount.value || parseInt(finalAmount.value) <= 0) {
-        alert("Please select or enter a valid donation amount.");
-        e.preventDefault();
-      }
+      button.classList.add("active");
+      customAmount.value = "";
+      updateAmount(button.dataset.amount);
     });
   });
+
+  // Update amount when custom amount is entered
+  customAmount.addEventListener("input", () => {
+    amountButtons.forEach(btn => btn.classList.remove("active"));
+    const value = parseInt(customAmount.value);
+    if (!isNaN(value) && value > 0) {
+      updateAmount(value);
+    } else {
+      updateAmount(0);
+    }
+  });
+
+  // Handle form submission
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // Prevent form from submitting normally
+
+    // Validate amount
+    if (!finalAmount.value || parseInt(finalAmount.value) <= 0) {
+      alert("❌ Please select or enter a valid donation amount.");
+      return;
+    }
+
+    // Get form data
+    const firstName = document.querySelector('input[name="first_name"]').value;
+    const lastName = document.querySelector('input[name="last_name"]').value;
+    const email = document.querySelector('input[name="email"]').value;
+    const phone = document.querySelector('input[name="phone"]').value;
+    const message = document.getElementById('message').value;
+    const amount = finalAmount.value;
+
+    // Validate required fields
+    if (!firstName || !lastName || !email || !phone) {
+      alert("❌ Please fill in all required fields.");
+      return;
+    }
+
+    // Show donation summary alert
+    alert(`✅ Thank you for your donation, ${firstName} ${lastName}!\n\nDonation Details:\nAmount: KES ${amount}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message || 'No message'}`);
+
+    // Reset form after success
+    form.reset();
+    finalAmount.value = 0;
+    summaryText.innerHTML = `Selected donation: <strong>KES 0</strong>`;
+    amountButtons.forEach(btn => btn.classList.remove("active"));
+  });
+});
+
 //CONTACT EMAIL SEND
 // Handle mailing list form
 document.getElementById('mailing-list').addEventListener('submit', function (e) {
