@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update amount when custom amount is entered
   customAmount.addEventListener("input", () => {
     amountButtons.forEach(btn => btn.classList.remove("active"));
-    const value = parseInt(customAmount.value);
+    let value = parseInt(customAmount.value);
     if (!isNaN(value) && value > 0) {
       updateAmount(value);
     } else {
@@ -147,38 +147,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle form submission
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent form from submitting normally
+    e.preventDefault(); // ❌ STOP form from submitting normally
 
-    // Validate amount
+    // Check if a valid amount is entered
     if (!finalAmount.value || parseInt(finalAmount.value) <= 0) {
       alert("❌ Please select or enter a valid donation amount.");
       return;
     }
 
-    // Get form data
-    const firstName = document.querySelector('input[name="first_name"]').value;
-    const lastName = document.querySelector('input[name="last_name"]').value;
-    const email = document.querySelector('input[name="email"]').value;
-    const phone = document.querySelector('input[name="phone"]').value;
-    const message = document.getElementById('message').value;
-    const amount = finalAmount.value;
+    // Validate other fields
+    const firstName = document.querySelector('input[name="first_name"]').value.trim();
+    const lastName = document.querySelector('input[name="last_name"]').value.trim();
+    const email = document.querySelector('input[name="email"]').value.trim();
+    const phone = document.querySelector('input[name="phone"]').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const donationAmount = finalAmount.value.trim();
 
-    // Validate required fields
     if (!firstName || !lastName || !email || !phone) {
       alert("❌ Please fill in all required fields.");
       return;
     }
 
-    // Show donation summary alert
-    alert(`✅ Thank you for your donation, ${firstName} ${lastName}!\n\nDonation Details:\nAmount: KES ${amount}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message || 'No message'}`);
+    // ✅ Show Alert
+    alert(`✅ Thank you for your donation, ${firstName} ${lastName}!\n\nDonation Details:\nAmount: KES ${parseInt(donationAmount).toLocaleString()}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message || 'No message'}`);
 
-    // Reset form after success
+    // ✅ After alert, you can reset the form
     form.reset();
     finalAmount.value = 0;
     summaryText.innerHTML = `Selected donation: <strong>KES 0</strong>`;
     amountButtons.forEach(btn => btn.classList.remove("active"));
+
+    // 🛑 Do NOT send anything to PHP!
+    // 🛑 No fetch('process_donation.php') call here
   });
 });
+
 
 //CONTACT EMAIL SEND
 // Handle mailing list form

@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require_once __DIR__ ."/db.php";
 
 $callbackJSONData = file_get_contents('php://input');
 $callbackData = json_decode($callbackJSONData, true);

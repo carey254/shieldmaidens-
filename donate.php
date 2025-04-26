@@ -1,7 +1,8 @@
 <?php
 header('Content-Type: application/json');
-require_once 'db.php'; // Use PDO connection
-require_once 'send_email.php'; // If you want to send email
+require_once __DIR__ ."/db.php"; // Use PDO connection
+require_once __DIR__ ."/process_donation.php";
+
 
 // Get inputs
 $frequency  = trim($_POST['frequency'] ?? '');
@@ -11,6 +12,9 @@ $last_name  = trim($_POST['last_name'] ?? '');
 $email      = trim($_POST['email'] ?? '');
 $phone      = trim($_POST['phone'] ?? '');
 $message    = trim($_POST['message'] ?? '');
+
+// Format phone (remove + if it exists)
+$phone = ltrim($phone, '+');
 
 // Validate
 if (!$frequency || !$amount || !$first_name || !$last_name || !$email || !$phone) {
@@ -101,4 +105,3 @@ sendEmail($email, "Thank you for your donation", "Hi {$first_name},\n\nWe receiv
 // 5. Respond
 echo json_encode(['status' => 'success', 'message' => 'Donation initiated. Complete payment via MPESA prompt!', 'db_id' => $insert_id]);
 ?>
-``

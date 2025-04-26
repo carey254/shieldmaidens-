@@ -178,35 +178,51 @@ nav a:not(.logo-link):hover {
 }
 
 /* Our Team */
-.team {
+/* Our Team */
+#team {
     text-align: center;
     padding: 40px;
     background-color: #fff;
+    overflow-x: auto; /* Allow horizontal scroll if needed */
 }
 
 .team-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px; /* Adjust for more spacing */
-    padding: 50px 20px; /* Adds space around the container */
+    flex-wrap: nowrap; /* Keep all cards on one line */
+    justify-content: flex-start; /* Start from left */
+    gap: 30px;
+    padding: 50px 20px;
 }
 
-.member {
+.team-member {
     background-color: #ff8c00;
     color: white;
-    margin: 15px; /* Adds space around each member */
     padding: 20px;
     border-radius: 5px;
     transition: 0.3s;
-    width: 250px; /* Set a width to prevent them from being too compressed */
+    width: 250px; /* Fixed width */
+    flex: 0 0 auto; /* Prevent shrinking */
     text-align: center;
 }
 
-
-.member:hover {
-    background-color: #ff4500;
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Make images circular */
+    margin-bottom: 15px;
 }
+
+
+
+.team-info h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+}
+
+.team-info p {
+    font-size: 16px;
+}
+
 
 
 /* Contact */
