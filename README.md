@@ -1,1 +1,2 @@
-# shieldmaidens-
+🛡️ Shield Maidens: Digital Safety & Support Platform
+Shield Maidens is a community-driven initiative focused on promoting digital safety, combating Technology-Facilitated Gender-Based Violence (TFGBV), and driving positive change through technology. This platform empowers individuals with essential knowledge to stay safe online, provides critical resources and support for survivors, and fosters innovation to create safer digital spaces for all.
