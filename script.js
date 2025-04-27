@@ -270,6 +270,14 @@ document.getElementById('contactForm').addEventListener('submit', async function
 });
 
 
+const hamburger = document.querySelector('.hamburger');
+const navLinks  = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('open');  // optional: for an “X” animation
+});
+
 
   /* ===== Server-side Node.js (keep in backend files, not frontend) =====
   
