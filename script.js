@@ -1,41 +1,64 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Simulate fetching event details (Replace with real API/database call)
-    let event = {
-      title: "Girls, Gadgets, and Guardrails",
-      date: new Date("2025-04-24T20:00:00"), // April 24, 2025 at 8:00 PM EAT
-      link: "https://shorturl.at/iRNnz"
+    
+    let event = { 
+      title: "Introduction to Cyber Attacks",
+      date: new Date("2025-04-29T19:00:00"), // April 29, 2025 at 7:00 PM EAT
+      link: "" // No link yet
     };
     
-  
     let now = new Date();
     let popup = document.getElementById("eventPopup");
     let titleEl = document.getElementById("eventTitle");
     let messageEl = document.getElementById("eventMessage");
     let linkEl = document.getElementById("eventLink");
     let reminderBtn = document.getElementById("setReminder");
-  
+    
     if (!event || event.date < now) {
       // No upcoming event
       titleEl.innerText = "Shield Maidens!";
       messageEl.innerText = "There are no upcoming events at this time.";
+      linkEl.style.display = "none"; // Hide link
     } else {
       let timeDiff = event.date - now;
       let hoursLeft = timeDiff / (1000 * 60 * 60);
-  
+    
       titleEl.innerText = event.title;
-  
-      if (hoursLeft <= 24) {
-        messageEl.innerText = "Join our session in a few hours!";
-        linkEl.style.display = "block";
-        linkEl.href = event.link;
+    
+      if (hoursLeft <= 48 && now.getDate() !== event.date.getDate()) {
+        // It's within 48 hours and tomorrow
+        messageEl.innerText = "Join us tomorrow for an exciting session!";
+        
+        if (event.link) {
+          linkEl.style.display = "block";
+          linkEl.href = event.link;
+          linkEl.innerText = "Click here to join";
+        } else {
+          linkEl.style.display = "none"; // No link yet
+        }
+    
+      } else if (hoursLeft <= 24) {
+        // It's today, less than 24 hours left
+        messageEl.innerText = "Join us for an exciting session later today!";
+        
+        if (event.link) {
+          linkEl.style.display = "block";
+          linkEl.href = event.link;
+          linkEl.innerText = "Click here to join";
+        } else {
+          linkEl.style.display = "none"; 
+        }
+    
       } else {
-        messageEl.innerText = "We have an upcoming event. Stay tuned!";
+        messageEl.innerText = "We have an exciting session coming up. Stay tuned!";
         reminderBtn.style.display = "block";
+        linkEl.style.display = "none"; 
       }
     }
-  
+    
     popup.style.display = "block";
   });
+      
   
   // Close the pop-up
   function closePopup() {
