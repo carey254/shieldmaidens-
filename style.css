@@ -322,11 +322,14 @@ footer {
     clear: both;
 }
 
-footer a {
-    color: #ff8c00;
+footer .social-link {
+    color: orange;
     text-decoration: none;
-    margin-left: 10px;
-}
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
 .footer-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -1409,6 +1412,14 @@ video {
       display: flex;
     }
   }
+  
+
+
+
+
+  
+  
+  
   
 
  

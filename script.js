@@ -302,6 +302,8 @@ hamburger.addEventListener('click', () => {
 });
 
 
+
+
   /* ===== Server-side Node.js (keep in backend files, not frontend) =====
   
   const express = require('express');

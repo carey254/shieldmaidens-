@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📚 Resource & Support | TFGBV Awareness</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+    }
+
+
+    /* Reset body margin for layout testing */
+body {
+  margin: 0;
+  padding-top: 80px; /* offset for fixed navbar */
+}
+
+/* NAV BAR */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+/* LOGO */
+.logo-link img {
+  height: 50px;
+}
+
+/* NAV LINKS GROUP */
+/* NAV LINKS GROUP (update this) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* more spacing */
+  white-space: nowrap; /* prevents breaking into 2 lines */
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+
+/* INDIVIDUAL LINKS */
+.nav-links a {
+  text-decoration: none;
+  color: #1a1717;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #ff4500;
+  color: white;
+  border-radius: 12px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 10px 16px;
+  display: block;
+  text-decoration: none;
+  color: #1a1717;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: dropdownFade 0.3s ease-in-out;
+}
+
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* DONATE BUTTON */
+.donate-btn {
+  background-color: orangered;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.donate-btn:hover {
+  background-color: #cc3700;
+}
+
+/* REMOVE PURPLE UNDERLINE */
+a:visited {
+  color: inherit;
+}
+
+    
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    /* Hero wrapper: full-width background image for the entire section */
+/* Hero-slide wrapper with moving background */
+.hero-slide {
+  width: 100%;
+  background: url('images/May2.png') center bottom/cover no-repeat;
+  animation: bgScroll 30s linear infinite;
+  padding: 80px 0;
+  color: #fff;
+  text-align: center;
+}
+
+/* Scroll the background vertically */
+@keyframes bgScroll {
+  from { background-position: center bottom; }
+  to   { background-position: center top; }
+}
+
+/* Container centered, transparent */
+.hero-slide .container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.4);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* Slide panels */
+#slides .slide {
+  display: none;
+}
+#slides .slide.active {
+  display: block;
+}
+
+/* Content box */
+.slide-content {
+  background: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 2rem;
+  max-width: 90%;
+}
+
+/* Headings */
+.hero-slide h1 {
+  font-size: 2rem;
+  color: #f39c12;
+}
+.hero-slide h2 {
+  font-size: 1.8rem;
+  color: #ecf0f1;
+  margin-bottom: 1rem;
+}
+.hero-slide p {
+  font-size: 1rem;
+  color: #ecf0f1;
+  line-height: 1.5;
+}
+
+/* Nav buttons */
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.btns button {
+  padding: 12px 20px;
+  background: #e58e26;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .3s;
+}
+.btns button:hover {
+  background: #f6b93b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero-slide .container { padding: 20px; }
+  .slide-content { padding: 20px; }
+  .btns { flex-direction: column; }
+}
+
+    /* TFGBV Section */
+    .awareness-section {
+      background-color: #000;
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
+    }
+
+   /* Replace your existing .awareness-container and panel rules with this: */
+
+.awareness-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* center both panels */
+  gap: 3rem;                  /* adds 3rem space between panels */
+  max-width: 1100px;
+  margin: auto;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1;
+  min-width: 300px;
+  /* remove individual margins to let the gap control spacing */
+}
+
+
+    .circle-grid {
+      display: grid;
+      grid-template-areas:
+        "a c b"
+        "d c e";
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle-card {
+      background-color: #1a1a1a;
+      border: 2px solid orange;
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .circle-card:hover {
+      transform: scale(1.05);
+      background-color: #2a2a2a;
+    }
+
+    .circle-card h2 {
+      color: orange;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .circle-card p {
+      font-size: 0.85rem;
+    }
+
+    .who { grid-area: a; }
+    .what { grid-area: b; }
+    .when { grid-area: d; }
+    .where { grid-area: e; }
+    .center {
+      grid-area: c;
+      background-color: orange;
+      color: black;
+      font-weight: bold;
+    }
+
+    .right-panel h1 {
+      color: orange;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .right-panel p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .highlight {
+      color: orange;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .circle-grid {
+        grid-template-areas:
+          "a"
+          "b"
+          "c"
+          "d"
+          "e";
+      }
+    }
+
+    .big-stat {
+      font-size: 4rem; /* Make it really big */
+      color: #e58e26; /* Orange color */
+      font-weight: bold; /* Make it bold */
+      text-align: center; /* Center it for better alignment */
+      margin: 1rem 0; /* Space around the statistics */
+    }
+    
+
+    .tfbgv-awareness {
+      padding: 60px 20px;
+      background: url('images/rock-texture.jpg') no-repeat center center/cover;
+    }
+    
+    .awareness-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .awareness-row.reverse {
+      flex-direction: row-reverse;
+    }
+    
+    .awareness-image {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .awareness-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .awareness-text {
+      flex: 1;
+      min-width: 300px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .block-number {
+      font-size: 4rem;
+      font-weight: bold;
+      color: orange;
+      margin-bottom: 15px;
+    }
+    
+    .awareness-text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #222;
+    }
+    
+    .awareness-text p {
+      font-size: 1.1rem;
+      color: #333;
+    }
+    
+    .awareness-text a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #fff;
+      background: orange;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    
+    .awareness-text a:hover {
+      background: #e67e22;
+    }
+    
+    /* Responsive tweak */
+    @media (max-width: 768px) {
+      .awareness-row,
+      .awareness-row.reverse {
+        flex-direction: column;
+      }
+    }
+    
+    
+/* ——— Global ——— */
+.quiz-container {
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.options li {
+  list-style: none;
+  margin: 8px 0;
+}
+
+h2 {
+  color: #333;
+}
+
+.quiz-container button {
+  padding: 10px 15px;
+  margin: 10px 5px;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+button:hover {
+  background-color: #0052a3;
+}
+
+button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+#results, #intermediate-quiz {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+
+
+
+.resources-section {
+  background: #f9f9f9;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.resources-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resources-section h2 {
+  font-size: 2rem;
+  color: #d35400;
+  margin-bottom: 2rem;
+}
+
+.resource-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 1.5rem;
+}
+
+.resource-content {
+  width: 45%;
+  text-align: left;
+}
+
+.resource-content h3 {
+  font-size: 1.25rem;
+  color: #e67e22;
+  margin-bottom: 1rem;
+}
+
+.resource-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.resource-link {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resource-link a {
+  font-size: 1.1rem;
+  background: #e58e26;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.resource-link a:hover {
+  background: #f6b93b;
+}
+
+
+/* Footer Styles */
+footer {
+  background-color: black; /* Black background */
+  color: white; /* White text color */
+  text-align: center; /* Center text and links */
+  padding: 20px; /* Padding around the footer */
+  width: 100%; /* Full width across the screen */
+  position: relative; /* Ensure it stays at the bottom of the page */
+  bottom: 0;
+  margin: 0; /* Remove default margin to ensure full width */
+}
+
+footer p {
+  margin: 10px 0; /* Add space above and below the paragraph */
+  font-size: 14px; /* Adjust font size for the copyright text */
+  
+}
+
+footer .social-link {
+  color: orange;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+
+
+footer a:focus {
+  outline: none; /* Remove outline on focus */
+}
+
+    
+  </style>
+</head>
+
+<body>
+   <!-- Navigation Bar -->
+   <nav>
+    <a href="index.html" class="logo-link">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
+    </a>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="resource&support.html">Resources Inf</a>
+      <div class="dropdown">
+        <a href="#">Get Involved</a>
+        <div class="dropdown-content">
+          <a href="events.html">Events</a>
+          <a href="news.html">News</a>
+          <a href="values.html"> Our Values</a>
+          <a href="partner.html">Partner with Us</a>
+        </div>
+      </div>
+    </div>
+  
+    <a href="donate.html" class="donate-btn">Donate</a>
+    </div>
+</nav>
+
+
+
+ <!-- Hero Slide Section -->
+<section class="hero-slide">
+  <div class="container">
+    <h1>Understanding the Laws and Protections Against TFGBV</h1>
+    <div id="slides">
+      <div class="slide active">
+        <div class="slide-content">
+          <h2>What is TFGBV?</h2>
+          <p>Understanding Technology-Facilitated Gender-Based Violence is the first step to building safer online spaces. Learn how laws protect your rights and dignity.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2>📡 Kenya Information and Communications Act (1998)</h2>
+          <p>This Act governs electronic communication and promotes ethical online behavior, indirectly addressing TFGBV.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2>📜 Constitution of Kenya (2010)</h2>
+          <p>Guarantees the right to privacy, freedom from discrimination, and protection from violence—core defenses against TFGBV.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2>👩🏽‍⚖️ National Gender and Equality Commission Act (2011)</h2>
+          <p>Establishes oversight on gender-based issues and supports policy formation to curb digital abuse.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2>💻 Computer Misuse and Cybercrimes Act (2018)</h2>
+          <p>Criminalizes cyber harassment, stalking, and unauthorized sharing of intimate content.</p>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h2>🔒 Data Protection Act (2019)</h2>
+          <p>Ensures that victims control their personal information online—key to preventing digital exploitation.</p>
+        </div>
+      </div>
+    </div>
+    <div class="btns">
+      <button onclick="manualPrev()">⬅ Back</button>
+      <button onclick="manualNext()">Next ➡</button>
+    </div>
+  </div>
+</section>
+
+  
+  <!-- TFGBV Awareness Section -->
+  <div class="awareness-section">
+    <div class="awareness-container">
+      <div class="left-panel">
+        <div class="circle-grid">
+          <div class="circle-card who"><h2>Who?</h2><p>Women, girls, LGBTQ+, and marginalized communities are primarily affected.</p></div>
+          <div class="circle-card what"><h2>What?</h2><p>Harassment, threats, cyberstalking, image-based abuse, and more.</p></div>
+          <div class="circle-card center"><h2>TFGBV</h2><p>Technology-Facilitated Gender-Based Violence</p></div>
+          <div class="circle-card when"><h2>When?</h2><p>Often begins as early as ages 9-14 and continues into adulthood.</p></div>
+          <div class="circle-card where"><h2>Where?</h2><p>Occurs on social media, email, smart tech, and connected devices.</p></div>
+        </div>
+      </div>
+      <div class="right-panel">
+        <h1>TFGBV Statistics</h1>
+        <p><strong>Did you know?</strong> Over <span class="highlight">85%</span> of women online globally have witnessed or experienced digital violence. In Kenya, a 2021 survey reported that <span class="highlight">1 in 3</span> women encountered TFGBV during election seasons.</p>
+        <p>This growing trend reflects how online spaces mirror offline gender discrimination—yet with faster, broader consequences. We need digital safety policies, education, and tech accountability now more than ever.</p>
+      
+       <!-- New Stats -->
+       <p class="big-stat">60% of survivors don’t report the abuse</strong></p>
+       <p class="big-stat">40% of victims remain in contact with their abuser</strong></p>
+      </div>
+    </div>
+  </div>
+  <section class="tfbgv-awareness">
+
+    <!-- Block 1 -->
+    <div class="awareness-row">
+      <div class="awareness-image">
+        <img src="images/May.png" alt="Meaning and Types of TFGBV">
+      </div>
+      <div class="awareness-text">
+        <div class="block-number">01</div>
+        <h2>Meaning and Types of TFGBV</h2>
+        <p>Technology-facilitated gender-based violence (TFGBV) describes harmful acts or behaviors committed against people using digital technologies, usually women and girls. These acts take advantage of the anonymity and connectivity that technology offers, making it easier for perpetrators to target their victims and inflict more widespread harm.</p>
+      </div>
+    </div>
+  
+    <!-- Block 2 - FORMS of TFGBV -->
+<div class="awareness-row reverse">
+  <div class="awareness-image">
+    <img src="images/forms.png" alt="Forms of TFGBV">
+  </div>
+  <div class="awareness-text">
+    <div class="block-number">02</div>
+    <h2>Forms of Technology-Facilitated Gender-Based Violence</h2>
+    <p>
+      TFGBV takes many forms, which are constantly evolving with technology. These acts often target women and girls, aiming to humiliate, silence, or control them through digital means. Some common forms include:
+    </p>
+    <ul>
+      <li><strong>Cyberstalking:</strong> Repeated online harassment and threats that instill fear or distress.</li>
+      <li><strong>Doxxing:</strong> Publishing private information like phone numbers, addresses, or personal data without consent.</li>
+      <li><strong>Non-consensual sharing of intimate images:</strong> Often referred to as “revenge porn,” this involves distributing private content to shame or blackmail victims.</li>
+      <li><strong>Online harassment:</strong> Persistent abusive messages via social media, email, or forums.</li>
+      <li><strong>Deepfakes and manipulated content:</strong> Using AI to create false or harmful visual/audio content, often sexual in nature.</li>
+    </ul>
+    <p>These forms not only cause emotional and psychological harm but also infringe on rights to safety, dignity, and expression.</p>
+    <a href="https://www.unwomen.org/en/what-we-do/ending-violence-against-women/facts-and-figures" target="_blank">Explore more on UN Women</a>
+  </div>
+</div>
+
+<!-- Block 3 - EFFECTS of TFGBV -->
+<div class="awareness-row">
+  <div class="awareness-image">
+    <img src="images/effects.png" alt="Effects of TFGBV">
+  </div>
+  <div class="awareness-text">
+    <div class="block-number">03</div>
+    <h2>Effects of Technology-Facilitated Gender-Based Violence</h2>
+    <p>
+      The impact of TFGBV goes beyond the screen. Victims experience serious consequences across emotional, physical, social, and economic levels:
+    </p>
+    <ul>
+      <li><strong>Mental Health:</strong> Victims often suffer from anxiety, depression, panic attacks, and PTSD.</li>
+      <li><strong>Loss of Opportunities:</strong> Some withdraw from public life, education, or career advancement due to fear or shame.</li>
+      <li><strong>Physical Safety Risks:</strong> Online abuse can escalate to physical stalking or violence in the real world.</li>
+      <li><strong>Self-Censorship:</strong> Many survivors silence their voices or avoid digital spaces entirely to avoid further harm.</li>
+    </ul>
+    <p>
+      These effects can linger for years, diminishing self-worth, eroding trust in technology, and limiting freedom of expression and access to digital resources.
+    </p>
+    <a href="https://www.endvawnow.org/en/articles/1529-technology-facilitated-violence-against-women-and-girls.html" target="_blank">Learn more on EndVAWNow.org</a>
+  </div>
+</div>
+
+  </section>
+  
+
+  <div class="quiz-container">
+    <h1>Test Your TFGBV Knowledge</h1>
+
+    <!-- BASIC QUIZ -->
+    <div id="basic-quiz" class="visible">
+      <h2>Basic Level Quiz</h2>
+
+      <div class="question" data-correct="B">
+        <p>1. What is TFGBV?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="A">Violence only in physical spaces</label></li>
+          <li><label><input type="radio" name="q1" value="B">Violence using digital technologies</label></li>
+          <li><label><input type="radio" name="q1" value="C">Only verbal abuse offline</label></li>
+          <li><label><input type="radio" name="q1" value="D">Violence targeting men exclusively</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="A">
+        <p>2. Which is an example of TFGBV?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="A">Sending anonymous threats online</label></li>
+          <li><label><input type="radio" name="q2" value="B">A face-to-face argument</label></li>
+          <li><label><input type="radio" name="q2" value="C">Schoolyard bullying</label></li>
+          <li><label><input type="radio" name="q2" value="D">None of the above</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="B">
+        <p>3. Who are chiefly targeted by TFGBV?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="A">All genders equally</label></li>
+          <li><label><input type="radio" name="q3" value="B">Women and girls</label></li>
+          <li><label><input type="radio" name="q3" value="C">Only men</label></li>
+          <li><label><input type="radio" name="q3" value="D">Children under 5</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="A">
+        <p>4. What is “doxxing”?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="A">Publishing private info without consent</label></li>
+          <li><label><input type="radio" name="q4" value="B">Sending kind messages</label></li>
+          <li><label><input type="radio" name="q4" value="C">Setting up security software</label></li>
+          <li><label><input type="radio" name="q4" value="D">None of these</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="D">
+        <p>5. A consequence of TFGBV can be:</p>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="A">Better job offers</label></li>
+          <li><label><input type="radio" name="q5" value="B">Increased self-esteem</label></li>
+          <li><label><input type="radio" name="q5" value="C">More trust in technology</label></li>
+          <li><label><input type="radio" name="q5" value="D">Emotional distress and reputational harm</label></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <button id="prev">⬅ Previous</button>
+        <button id="next">Next ➡</button>
+      </div>
+      
+      <button id="submit-basic" class="quiz-submit">Submit Basic Quiz</button>
+
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results">
+      <h2>Your Score: <span id="score"></span>%</h2>
+      <p id="feedback"></p>
+      <button id="retry-quiz">Try Again</button>
+      <button id="go-intermediate">Go to Intermediate Quiz</button>
+    </div>
+
+    <!-- INTERMEDIATE QUIZ -->
+    <div id="intermediate-quiz">
+      <h2>Intermediate Level Quiz</h2>
+
+      <div class="question" data-correct="A">
+        <p>1. What makes digital tools powerful for TFGBV perpetrators?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq1" value="A">Anonymity and wide reach</label></li>
+          <li><label><input type="radio" name="iq1" value="B">Strong encryption</label></li>
+          <li><label><input type="radio" name="iq1" value="C">Offline meetups</label></li>
+          <li><label><input type="radio" name="iq1" value="D">Legal barriers</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="D">
+        <p>2. Which is NOT a form of TFGBV?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq2" value="A">Cyberstalking</label></li>
+          <li><label><input type="radio" name="iq2" value="B">Impersonation</label></li>
+          <li><label><input type="radio" name="iq2" value="C">Non-consensual image sharing</label></li>
+          <li><label><input type="radio" name="iq2" value="D">Peaceful protest</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="B">
+        <p>3. A common impact of TFGBV is:</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq3" value="A">More online participation</label></li>
+          <li><label><input type="radio" name="iq3" value="B">Negative psychological harm</label></li>
+          <li><label><input type="radio" name="iq3" value="C">Improved finances</label></li>
+          <li><label><input type="radio" name="iq3" value="D">Better career prospects</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="B">
+        <p>4. What is “revenge porn”?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq4" value="A">Posting memes</label></li>
+          <li><label><input type="radio" name="iq4" value="B">Non-consensual sharing of intimate images</label></li>
+          <li><label><input type="radio" name="iq4" value="C">Cyberbullying by text only</label></li>
+          <li><label><input type="radio" name="iq4" value="D">Hacking bank accounts</label></li>
+        </ul>
+      </div>
+
+      <div class="question" data-correct="A">
+        <p>5. How can communities reduce TFGBV?</p>
+        <ul class="options">
+          <li><label><input type="radio" name="iq5" value="A">Spreading awareness and digital literacy</label></li>
+          <li><label><input type="radio" name="iq5" value="B">Ignoring the issue</label></li>
+          <li><label><input type="radio" name="iq5" value="C">Limiting all online use</label></li>
+          <li><label><input type="radio" name="iq5" value="D">Encouraging anonymous threats</label></li>
+        </ul>
+      </div>
+
+      <button id="submit-intermediate">Submit Intermediate Quiz</button>
+    </div>
+  </div>
+
+  <section id="resources" class="resources-section">
+    <div class="resources-container">
+      <h2>📚 Learn More: Useful Resources</h2>
+      
+      <div class="resource-item">
+        <div class="resource-content">
+          <h3>📖 Digital Safety Guide</h3>
+          <p>Learn how to protect yourself from online abuse and harassment through this detailed guide that provides practical advice on securing your digital presence.</p>
+        </div>
+        <div class="resource-link">
+          <a href="https://thelantern.net/wp-content/uploads/2022/04/TLP_SafetyGuide_2022.pdf" target="_blank">Download the Safety Guide</a>
+        </div>
+      </div>
+  
+      <div class="resource-item">
+        <div class="resource-content">
+          <h3>🎓 Learning the Effects of TFGBV</h3>
+          <p>Understand the profound psychological and emotional effects that Technology-facilitated Gender-Based Violence can have on its victims, and learn the best strategies to help prevent it.</p>
+        </div>
+        <div class="resource-link">
+          <a href="https://www.unfpa.org/TFGBV" target="_blank">Learn More About the Effects</a>
+        </div>
+      </div>
+  
+      <div class="resource-item">
+        <div class="resource-content">
+          <h3>🔒 Protecting Yourself from TFGBV</h3>
+          <p>This guide explains effective techniques and tools you can use to protect yourself from online and mobile harassment, including how to report TFGBV safely and securely.</p>
+        </div>
+        <div class="resource-link">
+          <a href="https://unric.org/en/how-technology-facilitated-gender-based-violence-impacts-women-and-girls/" target="_blank">Learn How to Protect Yourself</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+ <footer>
+  <p>&copy; 2025 |Shield Maidens | shi3ldmaidens@gmail.com </p>
+  <a href="https://www.instagram.com/securegirl.uy/" target="_blank" class="social-link">Instagram</a>
+  <a href="https://ke.linkedin.com/in/secure-girls-47ab66329" target="_blank" class="social-link">LinkedIn</a>
+  <a href="https://twitter.com/secureGirls" target="_blank" class="social-link">Twitter</a>
+</footer>
+   
+  <script>
+   // Slide logic
+const slides = document.querySelectorAll('.slide');
+let current = 0, autoPlay = true, intervalId;
+
+function showSlide(i) {
+  slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+}
+
+function nextSlide() {
+  current = (current + 1) % slides.length;
+  showSlide(current);
+}
+
+function prevSlide() {
+  current = (current - 1 + slides.length) % slides.length;
+  showSlide(current);
+}
+
+function manualNext() { autoPlay = false; clearInterval(intervalId); nextSlide(); }
+function manualPrev() { autoPlay = false; clearInterval(intervalId); prevSlide(); }
+
+intervalId = setInterval(() => { if (autoPlay) nextSlide(); }, 4000);
+
+
+       // Basic quiz logic
+       document.addEventListener("DOMContentLoaded", () => {
+        const basicQuiz = document.getElementById("basic-quiz");
+        const intermediateQuiz = document.getElementById("intermediate-quiz");
+        const resultsSection = document.getElementById("results");
+        const scoreDisplay = document.getElementById("score");
+        const feedback = document.getElementById("feedback");
+        const retryBtn = document.getElementById("retry-quiz");
+        const goIntermediateBtn = document.getElementById("go-intermediate");
+      
+        let currentQuiz = "basic";
+        let passedBasic = false;
+      
+        function calculateScore(quizId, prefix = "") {
+          const questions = quizId.querySelectorAll(".question");
+          let score = 0;
+          questions.forEach((q, i) => {
+            const correct = q.dataset.correct;
+            const selected = quizId.querySelector(`input[name="${prefix}q${i + 1}"]:checked`);
+            if (selected && selected.value === correct) score++;
+          });
+          return (score / questions.length) * 100;
+        }
+      
+        function showResults(score, quizType) {
+          resultsSection.style.display = "block";
+          basicQuiz.style.display = "none";
+          intermediateQuiz.style.display = "none";
+          scoreDisplay.textContent = score.toFixed(0);
+          feedback.textContent = "";
+      
+          if (score >= 80) {
+            if (quizType === "basic") {
+              feedback.textContent = "🎉 Great job! You passed the Basic quiz. You can now proceed to the Intermediate level.";
+              goIntermediateBtn.style.display = "inline-block";
+              passedBasic = true;
+            } else {
+              feedback.textContent = "🌟 Excellent! You've passed both levels. Keep learning to stay safe online!";
+              goIntermediateBtn.style.display = "none";
+            }
+            retryBtn.style.display = "none";
+          } else {
+            feedback.textContent = "❌ Good try! You can retake the quiz to improve your score.";
+            retryBtn.style.display = "inline-block";
+            goIntermediateBtn.style.display = "none";
+          }
+        }
+      
+        document.getElementById("submit-basic").addEventListener("click", () => {
+          const score = calculateScore(basicQuiz);
+          currentQuiz = "basic";
+          showResults(score, "basic");
+        });
+      
+        document.getElementById("submit-intermediate").addEventListener("click", () => {
+          const score = calculateScore(intermediateQuiz, "i");
+          currentQuiz = "intermediate";
+          showResults(score, "intermediate");
+        });
+      
+        retryBtn.addEventListener("click", () => {
+          resultsSection.style.display = "none";
+          if (currentQuiz === "basic") {
+            basicQuiz.style.display = "block";
+          } else {
+            intermediateQuiz.style.display = "block";
+          }
+        });
+      
+        goIntermediateBtn.addEventListener("click", () => {
+          resultsSection.style.display = "none";
+          intermediateQuiz.style.display = "block";
+        });
+      
+        // Optional: Page navigation
+        const questions = document.querySelectorAll("#basic-quiz .question");
+        let currentQ = 0;
+        questions.forEach((q, i) => {
+          if (i !== 0) q.style.display = "none";
+        });
+      
+        document.getElementById("next").addEventListener("click", () => {
+          if (currentQ < questions.length - 1) {
+            questions[currentQ].style.display = "none";
+            currentQ++;
+            questions[currentQ].style.display = "block";
+          }
+        });
+      
+        document.getElementById("prev").addEventListener("click", () => {
+          if (currentQ > 0) {
+            questions[currentQ].style.display = "none";
+            currentQ--;
+            questions[currentQ].style.display = "block";
+          }
+        });
+      });
+      
+  </script>
+</body>
+</html>
