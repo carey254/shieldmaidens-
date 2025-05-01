@@ -312,33 +312,94 @@ button:hover {
 }
 
 /* Footer */
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    clear: both;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.footer {
+  background-color: #000; /* Black background */
+  color: #fff;            /* Default text color */
+  padding: 40px 0;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
 }
 
-footer .social-link {
-    color: orange;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap; /* Stay in one row unless screen is small */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 10px 20px;
+  min-width: 180px;
+}
+
+.footer-section h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 16px;
+  margin: 6px 0;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover,
+.social-icons a:hover {
+  color: orange;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 
-.footer-content {
-    max-width: 1000px;
-    margin: 0 auto;
+  .footer-section {
+    margin: 20px;
+  }
 }
 
-footer a:hover {
-    color: #ff4500;
-}
 
+  
+  /* Make sure it stacks only on smaller screens */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-section {
+      margin-bottom: 20px;
+    }
+  }
+  
 
 
 

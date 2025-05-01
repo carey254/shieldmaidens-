@@ -6,6 +6,8 @@
     <title>Events Calendar</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/fullcalendar.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/index.global.min.js"></script>
+       <!-- Add this in the <head> of your HTML -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <style>
         body {
@@ -165,31 +167,79 @@
         }
         
         /* Footer */
-        footer {
-            background-color: #222;
-            color: white;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        .footer {
+          background-color: #000; /* Black background */
+          color: #fff;            /* Default text color */
+          padding: 40px 0;
+          width: 100%;
+          font-family: 'Poppins', sans-serif;
+        }
+        
+        .footer-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-wrap: nowrap; /* Stay in one row unless screen is small */
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 40px;
+          box-sizing: border-box;
+        }
+        
+        .footer-section {
+          flex: 1;
+          margin: 10px 20px;
+          min-width: 180px;
+        }
+        
+        .footer-section h4 {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+          color: #fff;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+          font-size: 16px;
+          margin: 6px 0;
+          color: #fff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover,
+        .social-icons a:hover {
+          color: orange;
+        }
+        
+        .social-icons {
+          margin-top: 10px;
+        }
+        
+        .social-icons a {
+          font-size: 20px;
+          margin-right: 12px;
+          color: #fff;
+          transition: color 0.3s ease;
+        }
+        
+        /* Responsive Layout */
+        @media (max-width: 992px) {
+          .footer-container {
+            flex-wrap: wrap;
+            justify-content: center;
             text-align: center;
-            padding: 20px;
-            width: 100%;
-            box-sizing: border-box;
-            clear: both;
-        }
-        
-        footer .social-link {
-            color: orange;
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: color 0.3s ease;
           }
-        .footer-content {
-            max-width: 1000px;
-            margin: 0 auto;
+        
+          .footer-section {
+            margin: 20px;
+          }
         }
         
-        footer a:hover {
-            color: #ff4500;
-        }
         
         
         
@@ -467,13 +517,38 @@ h2 {
         
     <!-- Footer -->
   
-    </footer>    <footer>
-        <p>&copy; 2025 Shield Maidens |shi3ldmaidens@gmail.com </p>
-        <a href="https://www.instagram.com/securegirl.uy/" target="_blank" class="social-link">Instagram</a>
-        <a href="https://ke.linkedin.com/in/secure-girls-47ab66329" target="_blank" class="social-link">LinkedIn</a>
-        <a href="https://twitter.com/secureGirls" target="_blank" class="social-link">Twitter</a>
-    </footer>
-
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <p>© 2025 Shield Maidens</p>
+            <p>Email: shi3ldmaidens@gmail.com</p>
+          </div>
+      
+          <div class="footer-section">
+            <h4>Location</h4>
+            <p>Nairobi</p>
+            <p>Kenya</p>
+          </div>
+      
+          <div class="footer-section">
+            <h4>For Queries or Feedback</h4>
+            
+            <p><strong>Email:</strong> shi3ldmaidens@gmail.com</p>
+          </div>
+      
+          <div class="footer-section">
+            <h4>Connect With Us On</h4>
+            <div class="social-icons">
+              <a href="https://twitter.com/secureGirls"><i class="fab fa-twitter"></i></a>
+              <a href="https://ke.linkedin.com/in/secure-girls-47ab66329"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/securegirl.uy/"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+      
     
 
     <script>
