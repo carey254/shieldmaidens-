@@ -7,6 +7,110 @@
     <link rel="stylesheet" href="style.css">
        <!-- Add this in the <head> of your HTML -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+     
+      font-family: Arial, sans-serif;
+margin: 0; /* Remove original margin */
+padding-top: 100px; /* 👈 Adds space for the nav */
+  }
+
+  .gicicit-milestone h4 {
+    margin-top: 24px;
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .milestone-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .milestone-images img {
+    flex: 1 1 calc(33.33% - 12px);
+    max-width: calc(33.33% - 12px);
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  main.news-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .milestones {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  .milestones,
+.news-section {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+  
+
+.milestone-card {
+  width: 100%;
+  margin: 10px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+
+
+  
+  .milestone-card h4 {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .milestone-card p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .milestone-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  
+  .milestone-images img {
+    flex: 1 1 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+    
+  
+</style>
 </head>
 <body>
 
@@ -17,13 +121,13 @@
         </a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="resource&support.html">Resources Inf</a>
+            <a href="resource&support.html">Resources</a>
             <div class="dropdown">
                 <a href="#">Get Involved</a>
                 <div class="dropdown-content">
                     <a href="events.html">Events</a>
                     <a href="news.html">News</a>
-                    <a href="values.html"> Our Values</a>
+               
                     <a href="partner.html">Partner with Us</a>
                 </div>
             </div>
@@ -47,13 +151,45 @@
                 <p>Partnered with Inuka AgriSolutions – training on Cybersecurity & Artificial Intelligence (AI) during a holiday bootcamp. 27 trained.</p>
             </div>
             <div class="milestone-card">
-                <span class="year"></span>
-                <p>GICICIT Primary School with Betty Mwende – taught 36 students on Cyberbullying & Online Safety.</p>
+              <h4>Hour of Code Launch at Pharo School Nairobi</h4>
+              <p>Happy to have been part of the launch of an Hour of Code at Pharo School Nairobi. The spark of curiosity in the young learners' eyes as they learn to code is a powerful reminder of the importance of introducing these skills early on ✨💡.</p>
+              
+              <div class="milestone-images">
+                <img src="images/pharoo.png" alt="Pharo School Hour of Code 1">
+                <img src="images/pharo.png" alt="Pharo School Hour of Code 2">
+                
+              </div>
             </div>
+            
             <div class="milestone-card">
-                <span class="year"></span>
-                <p>X-Space event with Gifted Community Center – tackled Good Digital Citizenship & Cybersecurity Protection. 40 attendees.</p>
+              <h4>Highlight from GICICIT Primary School Session</h4>
+              <span class="year"></span>
+              <p>
+                GICICIT Primary School with Betty Mwende – taught 36 students about Cyberbullying & Online Safety.
+                It was an absolute honor to be invited and share insights on internet safety. The students were engaged 
+                and well-informed, offering a glimpse into the digital habits of today’s young generation. 
+                This experience highlighted the urgent need for digital literacy and encouraged us to continue 
+                empowering youth through meaningful collaborations.
+              </p>
+              <div class="milestone-images">
+                
+                <img src="images/CICI.png" alt="GICICIT Session 2">
+                <img src="images/GICICV.png" alt="GICICIT Session 3">
+              </div>
             </div>
+            
+            <div class="milestone-card">
+              <h4>Highlight from Gifted Community Center on Good Digital CitizenshipSession</h4>
+              <span class="year"></span>
+              <p>
+                X-Space event with Gifted Community Center – focused on Good Digital Citizenship & Cybersecurity Protection. 
+                Joined by tech experts, legislators, student leaders, and women with disabilities, the session emphasized 
+                online safety, inclusion, and fighting technology-facilitated gender-based violence (TFGBV). 
+                A powerful, collaborative effort to create safer digital spaces for all.
+              </p>
+              <img src="images/X.png" alt="X-Space event session" style="max-width:100%; margin-top: 10px; border-radius: 8px;">
+            </div>
+            
         </section>
 
        
@@ -61,36 +197,56 @@
 
 
      <!-- Footer -->
-     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-          <div class="footer-section">
-            <p>© 2025 Shield Maidens</p>
-            <p>Email: shi3ldmaidens@gmail.com</p>
+     <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-logo">
+              <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo">
           </div>
-      
-          <div class="footer-section">
-            <h4>Location</h4>
-            <p>Nairobi</p>
-            <p>Kenya</p>
+  
+          <div class="footer-links">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="resource&support.html">Resources</a></li>
+                  <li><a href="events.html">Events</a></li>
+                  <li><a href="news.html">News</a></li>
+                  <li><a href="partner.html">Partner with Us</a></li>
+                  <li><a href="donate.html" class="donate-btn">Donate</a></li>
+              </ul>
+              <div class="payment-icons">
+                  <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" height="20">
+                  <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="20">
+                  <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="20">
+              </div>
           </div>
-      
-          <div class="footer-section">
-            <h4>For Queries or Feedback</h4>
-            
-            <p><strong>Email:</strong> shi3ldmaidens@gmail.com</p>
+  
+          <div class="footer-location">
+              <h3>Location</h3>
+              <p>Nairobi, Kenya</p>
           </div>
-      
-          <div class="footer-section">
-            <h4>Connect With Us On</h4>
-            <div class="social-icons">
-              <a href="https://twitter.com/secureGirls"><i class="fab fa-twitter"></i></a>
-              <a href="https://ke.linkedin.com/in/secure-girls-47ab66329"><i class="fab fa-linkedin-in"></i></a>
-              <a href="https://www.instagram.com/securegirl.uy/"><i class="fab fa-instagram"></i></a>
+  
+          <div class="footer-contact">
+              <h3>Contact Us</h3>
+              <p>Email: info@shieldmaidens.org</p>
+              <h3>Our Socials</h3>
+              <div class="social-icons">
+                <a href="https://x.com/_shield_maidens" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/twitter--v1.png" alt="Twitter"/>
+                </a>
+                <a href="https://www.linkedin.com/in/shield-maidens-47ab66329?" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn"/>
+                </a>
+                <a href="https://www.instagram.com/the_shield_maidens/" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"/>
+                </a>
             </div>
           </div>
-        </div>
-      </footer>
+      </div>
+      <div class="footer-bottom">
+          <p>Copyright © 2025 Shield Maidens</p>
+      </div>
+  </footer>
+  
       
       
 

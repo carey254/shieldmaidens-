@@ -13,12 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
     let messageEl = document.getElementById("eventMessage");
     let linkEl = document.getElementById("eventLink");
     let reminderBtn = document.getElementById("setReminder");
-    
+
     if (!event || event.date < now) {
-      // No upcoming event
-      titleEl.innerText = "Shield Maidens!";
+      titleEl.innerText = "Shield Maidens 2024!";
       messageEl.innerText = "There are no upcoming events at this time.";
-      linkEl.style.display = "none"; // Hide link
+      linkEl.style.display = "none";
+      reminderBtn.style.display = "none";
+    
+  
     } else {
       let timeDiff = event.date - now;
       let hoursLeft = timeDiff / (1000 * 60 * 60);

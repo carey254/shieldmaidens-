@@ -1,108 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events Calendar</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/fullcalendar.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.8/index.global.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-        #calendar {
-            max-width: 900px;
-            margin: 40px auto;
-        }
-        .event-section {
-            max-width: 900px;
-            margin: 20px auto;
-            text-align: left;
-        }
-        .events-container {
-            display: flex;
-            justify-content: space-between;
-        }
-        .events-list {
-            width: 45%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background: #f9f9f9;
-        }
-        h3 {
-            color: #0073e6;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            padding: 8px;
-            border-bottom: 1px solid #ccc;
-        }
-    </style>
-</head>
-<body>
-
-    <h2>Upcoming and Past Events Calendar</h2>
-    <div id="calendar"></div>
-
-    <!-- Events List Section -->
-    <section class="event-section">
-        <h2>Event Details</h2>
-        <div class="events-container">
-            <div class="events-list">
-                <h3>Upcoming Events</h3>
-                <ul id="upcoming-events-list"></ul>
-            </div>
-            <div class="events-list">
-                <h3>Past Events</h3>
-                <ul id="past-events-list"></ul>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
-
-            var events = [
-                { title: 'Training on Internet Safety', start: '2025-04-24', description: 'Amazon Leadership Initiative for Girls in ICT Day' },
-                { title: 'Cyber Security Talk', start: '2024-12-15', description: 'Session at Gifted Community Centre' },
-                { title: 'Hour of Code Launch', start: '2024-11-30', description: 'Event at Pharo School Nairobi' }
-            ];
-
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                selectable: true,
-                events: events,
-                eventClick: function(info) {
-                    alert(info.event.title + "\n" + info.event.start.toDateString() + "\n" + info.event.extendedProps.description);
-                }
-            });
-
-            calendar.render();
-
-            // Categorize events into Upcoming and Past
-            var upcomingList = document.getElementById('upcoming-events-list');
-            var pastList = document.getElementById('past-events-list');
-
-            events.forEach(event => {
-                let eventDate = new Date(event.start);
-                let eventItem = `<li><strong>${event.title}</strong> - ${eventDate.toDateString()}<br>${event.description}</li>`;
-                
-                if (event.start >= today) {
-                    upcomingList.innerHTML += eventItem;
-                } else {
-                    pastList.innerHTML += eventItem;
-                }
-            });
-        });
-    </script>
-
-</body>
-</html>
+<div class="text-overlay">
+    <div class="message active">
+      <strong>Our Mission:</strong> We aim to raise awareness, provide cyber safety practices, and engage communities in combating TFGBV while supporting marginalized groups, including PWDs, through inclusive resources and advocacy.
+    </div>
+    <div class="message">
+      <strong>Our Vision:</strong> To create a world where young women, girls, and persons with disabilities are empowered to navigate digital spaces safely, confidently, and free from Technology-Facilitated Gender-Based Violence (TFGBV).
+    </div>
+    <div class="message">
+      <strong>Our History:</strong> Proud alumni of AGCCI by UN Women. After the coding camp, some joined Siemens EmpowerHER and received scholarships in cybersecurity. Shield Maidens was born to empower more young women.
+    </div>
+  </div>
