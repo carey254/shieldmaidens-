@@ -81,17 +81,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
-  // Heroes section - rotating messages
-  const messages = document.querySelectorAll('.message');
-  let current = 0;
+ 
   
-  function rotateMessages() {
-    messages[current].classList.remove('active');
-    current = (current + 1) % messages.length;
-    messages[current].classList.add('active');
-  }
-  
-  setInterval(rotateMessages, 6000); // Every 6 seconds
   
   // Events page
   document.addEventListener('DOMContentLoaded', function() {
@@ -302,6 +293,21 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
   hamburger.classList.toggle('open');  // optional: for an “X” animation
 });
+
+
+//heroes section
+
+
+  const images = document.querySelectorAll('.bg-image');
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 4000); // change every 4 seconds
+
+
 
 
 
