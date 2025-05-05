@@ -396,7 +396,13 @@ h2 {
     transform: scale(1.05);
 }
 
-
+/* Responsive for mobile screens */
+@media (max-width: 768px) {
+    .event-card-large img {
+        width: 90%;
+        height: auto;
+    }
+}
 
   
   .event-info {
@@ -462,75 +468,7 @@ h2 {
     font-size: 1em;
   }
   
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 15px;
-    background-color: #fff;
-  }
-  
-  .logo-link {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    height: 50px; /* Smaller height to reduce whitespace */
-    width: auto;
-    margin-bottom: 5px;
-  }
-  
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 24px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .hamburger .bar {
-    width: 100%;
-    height: 3px;
-    background-color: #333;
-    border-radius: 2px;
-    transition: 0.3s;
-  }
-  
-  .nav-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 15px;
-  }
-  
-  /* Mobile layout */
-  @media (max-width: 600px) {
-    nav {
-      align-items: flex-start;
-    }
-  
-    .hamburger {
-      display: flex;
-      margin-top: 5px;
-    }
-  
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      margin-top: 10px;
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-  }
+ 
   
 </style>
 
@@ -544,12 +482,12 @@ h2 {
             <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
         </a>
 
-        <button class="hamburger" aria-label="Toggle menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </button>
-        
+         <button class="hamburger" aria-label="Toggle menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about us.html">About Us</a>
