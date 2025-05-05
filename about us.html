@@ -612,44 +612,142 @@ img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Hamburger button */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
+/* About section responsiveness */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
-.hamburger .bar {
+
+.about-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.about-image img {
   width: 100%;
-  height: 3px;
-  background-color: #333;
-  border-radius: 2px;
-  transition: 0.3s;
+  height: auto;
+  border-radius: 10px;
 }
 
-/* Toggle nav for mobile */
+.about-text {
+  flex: 1 1 300px;
+}
+
+/* What We Do items as responsive blocks */
+.what-we-do-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.what-we-do-item {
+  flex: 1 1 300px;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Team Section responsiveness */
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.team-member {
+  flex: 1 1 200px;
+  max-width: 250px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Value cards grid fix */
+.values-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.value-card {
+  flex: 1 1 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Footer fixes */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Image left and text right for about us on larger screens only */
+@media (min-width: 768px) {
+  .about-container {
+    flex-direction: row;
+  }
+}
+
+/* Stack everything nicely on mobile */
 @media (max-width: 600px) {
-  .hamburger {
-    display: flex;
-  }
-  .nav-links {
-    display: none;
+  .about-container,
+  .what-we-do-container,
+  .values-cards,
+  .team-container,
+  .footer-container {
     flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
+    align-items: center;
   }
-  .nav-links.active {
-    display: flex;
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .hamburger {
+    align-self: flex-end;
+  }
+
+  .about-image img {
+    margin: 0 auto;
   }
 }
+@media (max-width: 600px) {
+  .about-container,
+  .what-we-do-container,
+  .values-cards,
+  .team-container,
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }}
 
+  .nav-links {
+    width: 100%;
+  }
+
+  .hamburger {
+    align-self: flex-end;
+  }
 
 
     </style>
@@ -660,6 +758,11 @@ img {
         <a href="index.html" class="logo-link">
             <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
         </a>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about us.html">About Us</a>

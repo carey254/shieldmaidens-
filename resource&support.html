@@ -709,8 +709,44 @@ button:disabled {
   padding-top: 10px;
 }
 
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 15px;
+  background-color: #fff;
+}
 
-/* Hamburger button */
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px; /* Smaller height to reduce whitespace */
+  width: auto;
+  margin-bottom: 5px;
+}
+
+.donate-btn {
+  background-color: orange;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Optional: make it full-width on mobile */
+@media (max-width: 600px) {
+  .donate-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -723,6 +759,7 @@ button:disabled {
   padding: 0;
   margin: 0;
 }
+
 .hamburger .bar {
   width: 100%;
   height: 3px;
@@ -731,23 +768,35 @@ button:disabled {
   transition: 0.3s;
 }
 
-/* Toggle nav for mobile */
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+/* Mobile layout */
 @media (max-width: 600px) {
+  nav {
+    align-items: flex-start;
+  }
+
   .hamburger {
     display: flex;
+    margin-top: 5px;
   }
+
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
   }
+
   .nav-links.active {
     display: flex;
   }
 }
-
-
 
 
     
@@ -778,10 +827,10 @@ button:disabled {
           <a href="partner.html">Partner with Us</a>
         </div>
       </div>
-    </div>
-  
+   
     <a href="donate.html" class="donate-btn">Donate</a>
     </div>
+ 
 </nav>
 
 

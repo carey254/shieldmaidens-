@@ -468,9 +468,26 @@ h2 {
     font-size: 1em;
   }
   
- 
-/* Hamburger button */
-.hamburger {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+    background-color: #fff;
+  }
+  
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 50px; /* Smaller height to reduce whitespace */
+    width: auto;
+    margin-bottom: 5px;
+  }
+  
+  .hamburger {
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -482,6 +499,7 @@ h2 {
     padding: 0;
     margin: 0;
   }
+  
   .hamburger .bar {
     width: 100%;
     height: 3px;
@@ -490,24 +508,54 @@ h2 {
     transition: 0.3s;
   }
   
-  /* Toggle nav for mobile */
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+  }
+  
+  /* Mobile layout */
   @media (max-width: 600px) {
+    nav {
+      align-items: flex-start;
+    }
+  
     .hamburger {
       display: flex;
+      margin-top: 5px;
     }
+  
     .nav-links {
       display: none;
       flex-direction: column;
       width: 100%;
       margin-top: 10px;
     }
+  
     .nav-links.active {
       display: flex;
     }
   }
+
+  @media (max-width: 600px) {
+    .about-container,
+    .what-we-do-container,
+    .values-cards,
+    .team-container,
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }}
   
-
-
+    .nav-links {
+      width: 100%;
+    }
+  
+    .hamburger {
+      align-self: flex-end;
+    }
+  
   
 </style>
 
@@ -520,6 +568,12 @@ h2 {
         <a href="index.html" class="logo-link">
             <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
         </a>
+
+        <button class="hamburger" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about us.html">About Us</a>
