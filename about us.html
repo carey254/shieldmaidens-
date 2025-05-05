@@ -250,7 +250,7 @@ footer {
 
 .values-intro {
   max-width: 800px;
-  margin: 0 auto 40px;
+  margin: 0 auto 50px;
   font-size: 1.1em;
   line-height: 1.6;
   text-align: center;
@@ -259,8 +259,11 @@ footer {
 .values-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-between; /* pushes cards to ends */
+  gap: 50px 25px; /* more spacing between rows and columns */
+  max-width: 1600px;
+  margin: 0 auto;
+  counter-reset: card;
 }
 
 .value-card {
@@ -268,17 +271,21 @@ footer {
   border: 2px solid orange;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  flex: 1 1 calc(33.333% - 40px);
-  max-width: calc(33.333% - 40px);
+  flex: 0 1 calc(45% - 20px); /* 3 per row */
+  max-width: calc(40% - 20px);
   box-sizing: border-box;
   border-radius: 10px;
   position: relative;
 }
 
 .value-card:nth-child(n+4) {
-  flex: 1 1 calc(45% - 40px);
-  max-width: calc(45% - 40px);
+  flex: 0 1 calc(45% - 20px); /* only for bottom 2 cards */
+  max-width: calc(45% - 20px);
+  margin: 0 auto; /* center bottom two cards horizontally */
 }
+
+
+
 
 .value-card h3 {
   color: orange;
@@ -411,7 +418,7 @@ footer {
 }
 
 .footer-logo img {
-  max-height: 150px;
+  max-height: 100px;
 }
 
 .footer-links, .footer-location, .footer-contact {
@@ -481,6 +488,130 @@ footer {
   color: orange;
 }
 
+.about-us {
+  padding: 60px 5%;
+  background-color: #f0f4f8;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 0.5;
+  max-width: 400px;
+}
+
+.wide-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+  flex: 2;
+}
+
+.about-text h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: orange;
+  margin-bottom: 30px;
+}
+
+.about-paragraphs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 0;
+}
+
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-us .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-us .content,
+  .about-us .image {
+    flex: 1 1 100%;
+  }
+
+  .about-us .content h2 {
+    font-size: 1.5em;
+  }
+
+  .about-us .content p {
+    font-size: 1em;
+  }
+}
+
+.about-container,
+.what-we-do-container,
+.values-cards,
+.team-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    max-width: 200%;
+    gap: 5px;
+    padding: 0 5%;
+}
+
+.about-image, .about-text {
+    width: 48%;
+}
+
+.what-we-do-item,
+.value-card,
+.team-member {
+    flex: 1 1 30%; /* Adjusts to 3 per row */
+    margin: 10px;
+    min-width: 250px;
+}
+
+.values-intro,
+#team-intro p {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+#what-we-do, .values-section, #team {
+    padding: 40px 5%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 2Opx;
+}
+
+
+.wide-image {
+  width: 100%;
+  max-width: 1500px; /* Adjust to control stretch limit */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
     </style>
 </head>
 <body>
@@ -511,8 +642,8 @@ footer {
 <!-- About Us Section -->
 <section class="about-us">
   <div class="about-container">
-      <div class="about-image">
-          <img src="images/aboutus.png" alt="About Us">
+      <div class="about-image"> 
+          <img src="images/woman.png" alt="About Us" class="wide-image">
       </div>
       <div class="about-text">
           <h2 style="color: orange;">About Us</h2>
