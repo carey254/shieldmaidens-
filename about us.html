@@ -707,28 +707,73 @@ img {
     flex-direction: row;
   }
 }
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 15px;
+  background-color: #fff;
+}
 
-/* Stack everything nicely on mobile */
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px; /* Smaller height to reduce whitespace */
+  width: auto;
+  margin-bottom: 5px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+/* Mobile layout */
 @media (max-width: 600px) {
-  .about-container,
-  .what-we-do-container,
-  .values-cards,
-  .team-container,
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-links {
-    width: 100%;
+  nav {
+    align-items: flex-start;
   }
 
   .hamburger {
-    align-self: flex-end;
+    display: flex;
+    margin-top: 5px;
   }
 
-  .about-image img {
-    margin: 0 auto;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 }
 
