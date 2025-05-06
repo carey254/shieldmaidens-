@@ -759,20 +759,77 @@ button:disabled {
   display: block;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo img {
+  height: 50px;
+}
+
 .hamburger {
-  display: none;
-  background: none;
-  border: none;
   font-size: 24px;
-  color: #333;
   cursor: pointer;
 }
 
-/* Responsive Mobile Menu */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  padding-top: 60px;
+  transition: left 0.3s ease;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  padding: 15px 20px;
+}
+
+.side-menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+@media screen and (min-width: 769px) {
+  .hamburger, .side-menu {
+    display: none;
   }
+
+  .navbar {
+    justify-content: flex-start;
+  }
+
+  .navbar ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  .navbar ul li {
+    list-style: none;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+}
 
   .nav-links {
     position: fixed;
@@ -801,7 +858,7 @@ button:disabled {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-}
+
 
     
   </style>
@@ -829,7 +886,6 @@ button:disabled {
           <a href="partner.html">Partner with Us</a>
         </div>
       </div>
-    </div>
   
     <a href="donate.html" class="donate-btn">Donate</a>
     </div>
