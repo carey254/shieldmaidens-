@@ -286,13 +286,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 });
 
 
-const hamburger = document.querySelector('.hamburger');
-const navLinks  = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('open');  // optional: for an “X” animation
-});
 
 
 //heroes section
@@ -308,10 +302,12 @@ hamburger.addEventListener('click', () => {
   }, 4000); // change every 4 seconds
 
 
-  document.querySelector(".hamburger").addEventListener("click", () => {
-    document.querySelector(".nav-links").classList.toggle("active");
-  });
   
+  
+
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("open");
+  }
 
 
 
