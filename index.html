@@ -9,52 +9,58 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  
+  .logo {
+    height: 120px !important;
+  }
 </style>
 
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <a href="index.html" class="logo-link">
-            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
-        </a>
-
-        <div class="hamburger" id="hamburger">
-              <i class="fas fa-bars"></i>
-            </div>
-        
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about us.html">About Us</a>
-            <a href="resource&support.html">Resources</a>
-            <div class="dropdown">
-                <a href="#">Get Involved</a>
-                <div class="dropdown-content">
-                    <a href="events.html">Events</a>
-                    <a href="news.html">News</a>
-                   
-                    <a href="partner.html">Partner with Us</a>
-                </div>
-            </div>
-            <a href="donate.html" class="highlight">Donate</a>
+      <a href="index.html" class="logo-link">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
+      </a>
+    
+      <!-- Hamburger button -->
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    
+      <!-- Desktop nav only -->
+      <div class="nav-links" id="desktopNav">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="resource&support.html">Resources</a>
+        <div class="dropdown">
+          <a href="#">Get Involved</a>
+          <div class="dropdown-content">
+            <a href="events.html">Events</a>
+            <a href="news.html">News</a>
+            <a href="partner.html">Partner with Us</a>
+          </div>
         </div>
+        <a href="donate.html" class="donate-btn">Donate</a>
+      </div>
     </nav>
+    
+    <!-- Mobile side menu -->
+    <div id="sideMenu" class="side-menu">
+      <div class="close-btn" id="closeBtn">&times;</div>
+      <a href="index.html">Home</a>
+      <a href="about us.html">About Us</a>
+      <a href="resource&support.html">Resources</a>
+      <a href="events.html">Events</a>
+      <a href="news.html">News</a>
+      <a href="partner.html">Partner with Us</a>
+      <a href="donate.html" class="donate-btn">Donate</a>
+    </div>
+    
+    <!-- Overlay -->
+    <div id="menuOverlay" class="menu-overlay"></div>
+    
 
-    <!-- Side Menu -->
-<div id="sideMenu" class="side-menu">
-    <div class="close-btn" id="closeBtn">&times;</div>
-    <a href="index.html">Home</a>
-    <a href="about us.html">About Us</a>
-    <a href="resource&support.html">Resources</a>
-    <a href="events.html">Events</a>
-    <a href="news.html">News</a>
-    <a href="partner.html">Partner with Us</a>
-    <a href="donate.html" class="highlight">Donate</a>
-  </div>
-  
-  <!-- Optional overlay -->
-  <div id="menuOverlay" class="menu-overlay"></div>
+    
     
     
     <div id="eventPopup" class="popup">

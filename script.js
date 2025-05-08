@@ -305,9 +305,10 @@ document.getElementById('contactForm').addEventListener('submit', async function
   
   
 
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("open");
-  }
+
+
+
+
 
 
 
