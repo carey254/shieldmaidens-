@@ -302,7 +302,28 @@ document.getElementById('contactForm').addEventListener('submit', async function
   }, 4000); // change every 4 seconds
 
 
-  
+
+  const hamburger = document.getElementById('hamburger');
+  const sideMenu = document.getElementById('sideMenu');
+  const closeBtn = document.getElementById('closeBtn');
+  const overlay = document.getElementById('menuOverlay');
+
+  hamburger.addEventListener('click', () => {
+    sideMenu.classList.add('open');
+    overlay.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('active');
+  });
+
+
   
 
 
