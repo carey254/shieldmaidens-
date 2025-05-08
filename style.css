@@ -1601,103 +1601,6 @@ html, body {
     }
   }
   
-
-/* Base styling */
-.navbar {
-  background-color: white;
-  padding: 10px 20px;
-  position: relative;
-  z-index: 999;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  height: 60px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: white;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-}
-
-/* Responsive Mobile Menu */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: fixed;
-    left: -100%;
-    top: 0;
-    height: 100%;
-    width: 75%;
-    max-width: 300px;
-    background-color: white;
-    flex-direction: column;
-    gap: 20px;
-    padding: 60px 20px;
-    transition: left 0.3s ease;
-    box-shadow: 4px 0 6px rgba(0,0,0,0.1);
-  }
-
-  .nav-links.open {
-    left: 0;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-}
-
-
-
-  
  
 
 /*action*/
@@ -1757,6 +1660,70 @@ html, body {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
   
-  
 
- 
+
+/* Side Menu Panel */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* hide off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 999;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Show menu */
+.side-menu.open {
+  left: 0;
+}
+
+/* Close button */
+.side-menu .close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff4500;
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  z-index: 1000;
+}
+
+/* Overlay */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+}
+
+/* Show overlay */
+.menu-overlay.active {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}

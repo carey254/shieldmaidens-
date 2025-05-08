@@ -9,77 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: white;
-    border-bottom: 1px solid #ccc;
-  }
   
-  .logo img {
-    height: 50px;
-  }
-  
-  .hamburger {
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .side-menu {
-    position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    padding-top: 60px;
-    transition: left 0.3s ease;
-  }
-  
-  .side-menu.open {
-    left: 0;
-  }
-  
-  .side-menu ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .side-menu li {
-    padding: 15px 20px;
-  }
-  
-  .side-menu li a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  @media screen and (min-width: 769px) {
-    .hamburger, .side-menu {
-      display: none;
-    }
-  
-    .navbar {
-      justify-content: flex-start;
-    }
-  
-    .navbar ul {
-      display: flex;
-      gap: 20px;
-    }
-  
-    .navbar ul li {
-      list-style: none;
-    }
-  
-    .navbar ul li a {
-      text-decoration: none;
-      color: #333;
-    }
-  }
 </style>
 
 </head>
@@ -89,9 +19,11 @@
         <a href="index.html" class="logo-link">
             <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
         </a>
-        <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
-          <i class="fas fa-bars"></i>
-        </button>
+
+        <div class="hamburger" id="hamburger">
+              <i class="fas fa-bars"></i>
+            </div>
+        
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about us.html">About Us</a>
@@ -108,6 +40,21 @@
             <a href="donate.html" class="highlight">Donate</a>
         </div>
     </nav>
+
+    <!-- Side Menu -->
+<div id="sideMenu" class="side-menu">
+    <div class="close-btn" id="closeBtn">&times;</div>
+    <a href="index.html">Home</a>
+    <a href="about us.html">About Us</a>
+    <a href="resource&support.html">Resources</a>
+    <a href="events.html">Events</a>
+    <a href="news.html">News</a>
+    <a href="partner.html">Partner with Us</a>
+    <a href="donate.html" class="highlight">Donate</a>
+  </div>
+  
+  <!-- Optional overlay -->
+  <div id="menuOverlay" class="menu-overlay"></div>
     
     
     <div id="eventPopup" class="popup">
