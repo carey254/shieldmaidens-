@@ -38,6 +38,35 @@ padding-top: 100px; /* 👈 Adds space for the nav */
 
   }
 
+/* General styles for the .nav element */
+.nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
 
 
 
@@ -52,7 +81,7 @@ padding-top: 100px; /* 👈 Adds space for the nav */
       <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
   </a>
   
-  
+
     <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about us.html">About Us</a>

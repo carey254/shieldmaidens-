@@ -285,7 +285,9 @@ footer {
 }
 
 
-
+.logo {
+  height: 150px !important;
+}
 
 .value-card h3 {
   color: orange;
@@ -661,49 +663,70 @@ img {
   display: block;
 }
 
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-}
 
 /* Responsive Mobile Menu */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+/* General styles for the .nav element */
+.nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+}
 
-  .nav-links {
-    position: fixed;
-    left: -100%;
-    top: 0;
-    height: 100%;
-    width: 75%;
-    max-width: 300px;
-    background-color: white;
-    flex-direction: column;
-    gap: 20px;
-    padding: 60px 20px;
-    transition: left 0.3s ease;
-    box-shadow: 4px 0 6px rgba(0,0,0,0.1);
-  }
-
-  .nav-links.open {
-    left: 0;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
   }
 }
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
+/* General image styling for all screen sizes */
+img {
+  max-width: 100%;  /* Ensures the image does not overflow its container */
+  height: auto;     /* Maintains the aspect ratio */
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  img {
+    max-width: 100%; /* Ensures images scale properly on tablets */
+    height: auto;    /* Keeps the aspect ratio intact */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;  /* Full width on mobile */
+    height: auto;     /* Maintain aspect ratio */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  img {
+    max-width: 100%;  /* Full width on smaller screens */
+    height: auto;     /* Maintain aspect ratio */
+  }
+}
+
+
+
+  
 
 
     </style>
@@ -715,9 +738,7 @@ img {
             <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
         </a>
 
-        <div class="hamburger" onclick="toggleMenu()">
-          <i class="fas fa-bars"></i>
-        </div>
+       
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about us.html">About Us</a>
@@ -922,11 +943,6 @@ img {
 </footer>
 
   
-<script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("open");
-  }
-</script>
 
 
 

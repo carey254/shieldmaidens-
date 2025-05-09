@@ -1724,66 +1724,63 @@ html, body {
   background-color: #e63b00;
 }
 
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #ff4500;
-  z-index: 1001;
-}
 
-/* SIDE MENU (hidden by default) */
-.side-menu {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 250px;
-  height: 100%;
-  background-color: white;
-  box-shadow: 2px 0 6px rgba(0,0,0,0.2);
-  padding: 20px;
-  z-index: 1002;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  transition: left 0.3s ease;
-}
-
-.side-menu.open {
-  left: 0;
-}
-
-.side-menu .close-btn {
-  font-size: 26px;
-  cursor: pointer;
-  align-self: flex-end;
-  margin-bottom: 20px;
-}
-
-/* OVERLAY */
-.menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1000;
-}
-
-.menu-overlay.active {
-  display: block;
-}
 
 /* RESPONSIVE BEHAVIOR */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
+/* General styles for the .nav element */
+.nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
+}
 
-  .hamburger {
-    display: block;
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
+img {
+  max-width: 100%;  /* Ensures the image does not overflow its container */
+  height: auto;     /* Maintains the aspect ratio */
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  img {
+    max-width: 100%; /* Ensures images scale properly on tablets */
+    height: auto;    /* Keeps the aspect ratio intact */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;  /* Full width on mobile */
+    height: auto;     /* Maintain aspect ratio */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  img {
+    max-width: 100%;  /* Full width on smaller screens */
+    height: auto;     /* Maintain aspect ratio */
   }
 }

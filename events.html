@@ -397,14 +397,64 @@ h2 {
 }
 
 /* Responsive for mobile screens */
-@media (max-width: 768px) {
-    .event-card-large img {
-        width: 90%;
-        height: auto;
-    }
+/* General styles for the .nav element */
+.nav {
+  width: 80%;
+  margin: 0 auto;
+  padding: 15px;
 }
 
-  
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  .nav {
+    width: 90%; /* Adjust width on tablets */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  .nav {
+    width: 100%; /* Full width on mobile devices */
+    padding: 10px; /* Optional, adjust padding on smaller screens */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  .nav {
+    width: 100%; /* Full width for very small screens */
+    padding: 5px; /* Further adjust padding if necessary */
+  }
+}
+
+img {
+  max-width: 100%;  /* Ensures the image does not overflow its container */
+  height: auto;     /* Maintains the aspect ratio */
+}
+
+/* Media query for tablets */
+@media (max-width: 1024px) {
+  img {
+    max-width: 100%; /* Ensures images scale properly on tablets */
+    height: auto;    /* Keeps the aspect ratio intact */
+  }
+}
+
+/* Media query for small devices (phones) */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;  /* Full width on mobile */
+    height: auto;     /* Maintain aspect ratio */
+  }
+}
+
+/* Media query for very small devices (phones in portrait) */
+@media (max-width: 480px) {
+  img {
+    max-width: 100%;  /* Full width on smaller screens */
+    height: auto;     /* Maintain aspect ratio */
+  }
+}
   .event-info {
     flex-grow: 1;
   }
