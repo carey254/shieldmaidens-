@@ -661,7 +661,20 @@ img {
   display: block;
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
 
+/* Responsive Mobile Menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
 
   .nav-links {
     position: fixed;
@@ -690,154 +703,37 @@ img {
   .dropdown:hover .dropdown-content {
     display: block;
   }
-
-  /* Base Styles */
-.navbar {
-  background-color: white;
-  padding: 10px 20px;
-  position: relative;
-  z-index: 999;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  height: 80px;
-}
-
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #333;
-}
-
-/* Mobile Slide Menu */
-.nav-links {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Mobile styles */
-@media screen and (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    flex-direction: column;
-    padding: 80px 30px 30px;
-    gap: 20px;
-    transition: left 0.3s ease;
-    z-index: 1000;
-  }
-
-  .nav-links.open {
-    left: 0;
-  }
-
-  .close-btn {
-    font-size: 2rem;
-    color: #333;
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    cursor: pointer;
-  }
-
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-}
-
-
 
 
     </style>
-    <script>
-      function toggleMenu() {
-        document.getElementById("navLinks").classList.toggle("open");
-      }
-    </script>
-    
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <!-- Logo on the left -->
+    <nav>
         <a href="index.html" class="logo-link">
-          <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 80px;">
+            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
         </a>
-    
-        <!-- Hamburger icon on the right -->
+
         <div class="hamburger" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </div>
-      </div>
-    
-      <!-- Navigation links (mobile menu) -->
-      <div class="nav-links" id="navLinks">
-        <span class="close-btn" onclick="toggleMenu()">&times;</span>
-    
-        <a href="index.html">Home</a>
-        <a href="about us.html">About Us</a>
-        <a href="resource&support.html">Resources</a>
-    
-        <div class="dropdown">
-          <a href="#">Get Involved</a>
-          <div class="dropdown-content">
-            <a href="events.html">Events</a>
-            <a href="news.html">News</a>
-            <a href="partner.html">Partner with Us</a>
-          </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="resource&support.html">Resources</a>
+            <div class="dropdown">
+                <a href="#">Get Involved</a>
+                <div class="dropdown-content">
+                    <a href="events.html">Events</a>
+                    <a href="news.html">News</a>
+                    <a href="partner.html">Partner with Us</a>
+                </div>
+            </div>
+            <a href="donate.html" class="highlight">Donate</a>
         </div>
-    
-        <a href="donate.html" class="highlight">Donate</a>
-      </div>
     </nav>
-    
+
 
 
 <!-- About Us Section -->
