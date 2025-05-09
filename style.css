@@ -1756,3 +1756,69 @@ html, body {
     padding: 5px; /* Further adjust padding if necessary */
   }
 }
+
+/* ===== Desktop default nav stays the same ===== */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none; /* hidden by default */
+}
+
+/* ===== Mobile View ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 20px;
+    z-index: 1000;
+    gap: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .mobile-nav a {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+  }
+
+  .mobile-nav .highlight {
+    background: #ff3366;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .mobile-nav .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+
+  .mobile-nav.hide {
+    display: none;
+  }
+
+  .close-btn {
+    font-size: 2rem;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  /* Hide desktop .nav-links if needed */
+  .nav-links {
+    display: none !important;
+  }
+}
