@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Values</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="style.css">
        <!-- Add this in the <head> of your HTML -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -696,7 +696,18 @@ img {
 }
 
 
-  
+.hero img {
+   
+  max-width: 600px; /* Set a max width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto; /* Center the images */
+  width: 100%; /* Ensures the image spans the full width */
+  max-width: 100%; /* Prevents overflow */
+  height: 400px; /* Keeps the height fixed */
+  object-fit: cover; /* Ensures the image fills the width while maintaining a good aspect ratio */
+  display: block;
+}
 
 
     </style>
@@ -725,7 +736,18 @@ img {
         </div>
     </nav>
 
-
+    <section class="hero-alt">
+      <div class="image-container">
+        <div class="color-overlay"></div>
+        <img src="images/image.png" alt="Background 1" class="bg-image active">
+        <img src="images/innovation.png" alt="Background 2" class="bg-image">
+        <img src="images/prevent.png" alt="Background 3" class="bg-image">
+        <img src="images/aboutus.png" alt="Background 4" class="bg-image">
+    
+        
+        </div>
+      </div>
+    </section>
 
 <!-- About Us Section -->
 <section class="about-us">
@@ -913,7 +935,20 @@ img {
 </footer>
 
   
+<script>
+  //heroes section
 
+
+  const images = document.querySelectorAll('.bg-image');
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 4000); // change every 4 seconds
+
+</script>
 
 
 </body>
