@@ -51,10 +51,9 @@ nav {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 40px; /* more spacing */
-  white-space: nowrap; /* prevents breaking into 2 lines */
-  margin-left: auto;
-  margin-right: 30px;
+  gap: 20px; /* more spacing */
+ 
+  margin-right: 80px;
 }
 
 
@@ -279,7 +278,7 @@ a:visited {
 
     .circle-card:hover {
       transform: scale(1.05);
-      background-color: #2a2a2a;
+      
     }
 
     .circle-card h2 {
@@ -287,6 +286,7 @@ a:visited {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
     }
+    
 
     .circle-card p {
       font-size: 0.85rem;
@@ -346,27 +346,8 @@ a:visited {
       flex-direction: row-reverse;
     }
     
-    .awareness-image,
-    .awareness-text {
-      flex: 1 1 50%;
-      box-sizing: border-box;
-      padding: 20px;
-    }
-   
-    .awareness-image {
-      flex: 1;
-      overflow: hidden;
-      display: flex;
-      align-items: stretch;
-    }
     
-    .awareness-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 10px;
-      display: block;
-    }
+   
     
     .awareness-row {
       display: flex;
@@ -377,16 +358,23 @@ a:visited {
     
     .awareness-image {
       flex: 1;
-      overflow: hidden;
+      min-width: 300px;
+      border-radius: 8px;
       display: flex;
+      align-items: stretch;
+      overflow: hidden;
     }
     
     .awareness-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Crop the image to fill container */
+      object-fit: cover;
       border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
+    
+    
+    
     
     .awareness-text {
       flex: 1;
@@ -412,25 +400,9 @@ a:visited {
       flex-direction: row-reverse;
     }
     
-    .awareness-image {
-      flex: 1;
-      min-width: 300px;
-    }
     
-    .awareness-image img {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
     
-    .awareness-text {
-      flex: 1;
-      min-width: 300px;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
+    
     
     .block-number {
       font-size: 4rem;
@@ -605,21 +577,26 @@ button:disabled {
 }
 
 .resource-link {
-  width: 45%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .resource-link a {
-  font-size: 1.1rem;
-  background: #e58e26;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
+  background-color: #ec8b21;
+  color: white;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
+  padding: 12px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  width: 240px; /* Adjust this to match the longer button nicely */
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
 }
+
+
 
 .resource-link a:hover {
   background: #f6b93b;
@@ -763,10 +740,11 @@ button:disabled {
           <a href="partner.html">Partner with Us</a>
         </div>
       </div>
-    </div>
+    
   
     <a href="donate.html" class="donate-btn">Donate</a>
     </div>
+  </div>
 </nav>
 
 
@@ -1052,7 +1030,10 @@ button:disabled {
         </div>
         <div class="resource-link">
           <a href="https://thelantern.net/wp-content/uploads/2022/04/TLP_SafetyGuide_2022.pdf" target="_blank">Download the Safety Guide</a>
+          <a href="https://www.ncsc.gov.uk/cyberaware/home" target="_blank">Additional Guide</a>
+          
         </div>
+        
       </div>
   
       <div class="resource-item">
@@ -1062,6 +1043,7 @@ button:disabled {
         </div>
         <div class="resource-link">
           <a href="https://giwps.georgetown.edu/resource/technology-facilitated-gender-based-violence/" target="_blank">Learn More About the Effects</a>
+          <a href="https://www.unfpa.org/sites/default/files/pub-pdf/A%20Framework%20for%20TFGBV%20Programming.pdf" target="_blank">Additional Guide</a>
         </div>
       </div>
   
@@ -1072,6 +1054,7 @@ button:disabled {
         </div>
         <div class="resource-link">
           <a href="https://unric.org/en/how-technology-facilitated-gender-based-violence-impacts-women-and-girls/" target="_blank">Learn How to Protect Yourself</a>
+           <a href="https://www.unwomen.org/sites/default/files/2024-09/technology-facilitated-gender-based-violence-shared-research-agenda-en.pdf" target="_blank">Additional Guide</a>
         </div>
         
       </div>

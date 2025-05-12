@@ -9,6 +9,7 @@
        <!-- Add this in the <head> of your HTML -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
+      
 
          /* Values page*/
   .values-section {
@@ -38,20 +39,46 @@
 }
 
 .values-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 100px 60px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
+/* General card style */
 .value-card {
-    background: #f9f9f9;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  flex: 1 1 30%;
+  max-width: 30%;
+  text-align: left;
+  margin: 0; /* Remove auto-centering */
+}
+
+/* Move first two cards more to the left */
+.value-card:nth-child(1),
+.value-card:nth-child(2) {
+  margin-left: 0;
+}
+
+/* Center middle card (Advocacy) */
+.value-card:nth-child(3) {
+  margin: 0 auto;
+}
+
+/* Move last two cards more to the right */
+.value-card:nth-child(4),
+.value-card:nth-child(5) {
+  margin-left: auto;
 }
 
 
+.logo{
+  height: 200px !important;
+}
 
 .value-card h3 {
     color: #FF6600; /* orange titles */
@@ -256,38 +283,40 @@ footer {
   text-align: center;
 }
 
+.value-card {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  flex: 1 1 30%;
+  max-width: 30%;
+  text-align: left;
+  margin: 0 auto;
+}
+
 .values-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* pushes cards to ends */
-  gap: 50px 25px; /* more spacing between rows and columns */
+  justify-content: space-between;
+  gap: 100px 60px; /* row-gap column-gap */
   max-width: 1600px;
   margin: 0 auto;
-  counter-reset: card;
 }
 
-.value-card {
-  background-color: #fff;
-  border: 2px solid orange;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  flex: 0 1 calc(45% - 20px); /* 3 per row */
-  max-width: calc(40% - 20px);
-  box-sizing: border-box;
-  border-radius: 10px;
-  position: relative;
+.value-card::before {
+  content: none; /* remove numbering */
 }
+
+
 
 .value-card:nth-child(n+4) {
-  flex: 0 1 calc(45% - 20px); /* only for bottom 2 cards */
-  max-width: calc(45% - 20px);
-  margin: 0 auto; /* center bottom two cards horizontally */
+  margin: 0; /* remove auto-centering */
+  flex: 2 2 40%;
+  max-width: 30%;
 }
 
 
-.logo {
-  height: 150px !important;
-}
+
+
 
 .value-card h3 {
   color: orange;
@@ -300,23 +329,9 @@ footer {
   color: #333;
 }
 
-.value-card::before {
-  content: counter(card);
-  counter-increment: card;
-  position: absolute;
-  top: -15px;
-  left: -15px;
-  background: black;
-  color: white;
-  font-size: 1.5em;
-  font-weight: bold;
-  padding: 10px 15px;
-  border-radius: 8px;
-}
 
-.values-cards {
-  counter-reset: card;
-}
+
+
 
 @media screen and (max-width: 900px) {
   .value-card,
@@ -615,13 +630,20 @@ img {
 }
 
 /* Base styling */
-.navbar {
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: white;
-  padding: 10px 20px;
-  position: relative;
-  z-index: 999;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 60px;
 }
+
 
 .nav-container {
   display: flex;
@@ -629,14 +651,17 @@ img {
   align-items: center;
 }
 
-.logo {
-  height: 60px;
-}
+
 
 .nav-links {
   display: flex;
   gap: 20px;
   align-items: center;
+
+    margin-right: 100px; /* <-- Add this */
+   
+  white-space: nowrap; /* prevents breaking into 2 lines */
+
 }
 
 .nav-links a {
@@ -667,9 +692,7 @@ img {
 /* Responsive Mobile Menu */
 /* General styles for the .nav element */
 .nav {
-  width: 80%;
-  margin: 0 auto;
-  padding: 15px;
+  
 }
 
 /* Media query for tablets */
@@ -715,26 +738,26 @@ img {
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <a href="index.html" class="logo-link">
-            <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo" style="height: 150px;">
-        </a>
-
-       
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about us.html">About Us</a>
-            <a href="resource&support.html">Resources</a>
-            <div class="dropdown">
-                <a href="#">Get Involved</a>
-                <div class="dropdown-content">
-                    <a href="events.html">Events</a>
-                    <a href="news.html">News</a>
-                    <a href="partner.html">Partner with Us</a>
-                </div>
-            </div>
-            <a href="donate.html" class="highlight">Donate</a>
+      <a href="index.html" class="logo-link">
+        <img src="images/sm_1_nobg.png" alt="Shield Maidens Logo" class="logo">
+      </a>
+    
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="resource&support.html">Resources</a>
+        <div class="dropdown">
+          <a href="#">Get Involved</a>
+          <div class="dropdown-content">
+            <a href="events.html">Events</a>
+            <a href="news.html">News</a>
+            <a href="partner.html">Partner with Us</a>
+          </div>
         </div>
+        <a href="donate.html" class="highlight">Donate</a>
+      </div>
     </nav>
+    
 
     <section class="hero-alt">
       <div class="image-container">
