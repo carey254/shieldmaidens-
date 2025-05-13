@@ -12,85 +12,131 @@
       
 
          /* Values page*/
-  .values-section {
-    padding: 60px 20px;
-    background: #ffffff; /* white background */
-    color: #000000; /* black text */
-    text-align: center;
-}
-
-.values-container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.values-section h2 {
-    color: #FF6600; /* strong orange for main title */
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.values-intro {
-    font-size: 1.2rem;
-    color: #333333;
-    max-width: 900px;
-    margin: 0 auto 50px auto;
-    line-height: 1.7;
-}
-
-.values-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 100px 60px;
-  max-width: 1600px;
-  margin: 0 auto;
-}
-
-/* General card style */
-.value-card {
-  background-color: transparent;
-  box-shadow: none;
-  padding: 0;
-  flex: 1 1 30%;
-  max-width: 30%;
-  text-align: left;
-  margin: 0; /* Remove auto-centering */
-}
-
-/* Move first two cards more to the left */
-.value-card:nth-child(1),
-.value-card:nth-child(2) {
-  margin-left: 0;
-}
-
-/* Center middle card (Advocacy) */
-.value-card:nth-child(3) {
-  margin: 0 auto;
-}
-
-/* Move last two cards more to the right */
-.value-card:nth-child(4),
-.value-card:nth-child(5) {
-  margin-left: auto;
-}
-
-
-.logo{
-  height: 200px !important;
-}
-
-.value-card h3 {
-    color: #FF6600; /* orange titles */
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-.value-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333333;
-}
+         * {
+          box-sizing: border-box;
+        }
+      
+        body {
+          font-family: sans-serif;
+          margin: 0;
+          background-color: #fefefe;
+        }
+      
+        .values-section {
+          padding: 2rem;
+          background-color: #fff7ed;
+        }
+      
+        summary {
+          background-color: #ffffff;
+          padding: 1.2rem;
+          font-size: 1.6rem;
+          font-weight: bold;
+          color: #ea580c;
+          text-align: center;
+          border-radius: 10px;
+          cursor: pointer;
+          border: 2px solid #f97316;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+      
+        summary::marker {
+          display: none;
+        }
+      
+        .values-intro {
+          text-align: center;
+          max-width: 900px;
+          margin: 1.7rem auto;
+          font-size: 1.3rem;
+          color: black;
+        }
+      
+        .values-cards {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1.5rem;
+          margin-top: 2rem;
+        }
+      
+        .card {
+          width: 18%;
+          min-width: 180px;
+          perspective: 1000px;
+        }
+      
+        .card-inner {
+          width: 100%;
+          height: 220px;
+          position: relative;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+        }
+      
+        .card:hover .card-inner {
+          transform: rotateY(180deg);
+        }
+      
+        .card-front, .card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          backface-visibility: hidden;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+          background-color: white;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+      
+        .card-front {
+          border: 2px solid #f97316;
+          color: #ea580c;
+          font-weight: bold;
+        }
+      
+        .card-front i {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          color: #ea580c;
+        }
+      
+        .sticker {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          background: #f97316;
+          color: white;
+          font-size: 0.75rem;
+          padding: 0.2rem 0.6rem;
+          border-radius: 10px;
+        }
+      
+        .card-back {
+          transform: rotateY(180deg);
+          background-color: #fff7ed;
+          border: 2px solid #f97316;
+          color: #444;
+          font-size: 0.95rem;
+          padding: 1rem;
+        }
+      
+        @media (max-width: 1000px) {
+          .card {
+            width: 45%;
+          }
+        }
+      
+        @media (max-width: 600px) {
+          .card {
+            width: 90%;
+          }
+        }
 
 /*action*/
 
@@ -262,90 +308,68 @@ footer {
 /*OUR VALUES*/
 
 .values-section {
-  background-color: #fff;
-  color: #000;
-  padding: 40px;
-  font-family: 'Segoe UI', sans-serif;
+  background-color: #f3f4f6;
+  padding: 2rem;
+  font-family: sans-serif;
 }
 
-.values-container h2 {
-  text-align: center;
-  color: orange;
-  font-size: 2em;
-  margin-bottom: 20px;
+.values-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+summary {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+}
+
+details[open] summary::after {
+  content: "▲";
+  float: right;
+}
+
+summary::after {
+  content: "▼";
+  float: right;
 }
 
 .values-intro {
-  max-width: 800px;
-  margin: 0 auto 50px;
-  font-size: 1.1em;
-  line-height: 1.6;
-  text-align: center;
-}
-
-.value-card {
-  background-color: transparent;
-  box-shadow: none;
-  padding: 0;
-  flex: 1 1 30%;
-  max-width: 30%;
-  text-align: left;
-  margin: 0 auto;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: black;
 }
 
 .values-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 100px 60px; /* row-gap column-gap */
-  max-width: 1600px;
-  margin: 0 auto;
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.value-card::before {
-  content: none; /* remove numbering */
+.value-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-
-
-
-.value-card:nth-child(n+4) {
-  margin: 0; /* remove auto-centering */
-  flex: 2 2 40%;
-  max-width: 30%;
-}
-
-
-
-
 
 .value-card h3 {
-  color: orange;
-  margin-bottom: 10px;
-  font-size: 1.4em;
+  color: #6b21a8;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .value-card p {
-  font-size: 0.95em;
-  color: #333;
+  color:black;
+  font-size: 1.03rem;
 }
-
-
-
-
-
-@media screen and (max-width: 900px) {
-  .value-card,
-  .value-card:nth-child(n+4) {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-.values-section {
-  margin-bottom: 100px;
-  padding-bottom: 1px; /* prevents margin collapse */
-}
-
 #team-intro {
   text-align: center;
   margin-top: 100px;
@@ -733,6 +757,63 @@ nav {
 }
 
 
+/* Hide hamburger & menu by default */
+.hamburger,
+.side-menu {
+  display: none;
+}
+
+/* Mobile styles only */
+@media (max-width: 768px) {
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    z-index: 1001;
+    display: block;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .side-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 15px 0;
+  }
+
+  .close-btn {
+    align-self: flex-end;
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  /* Hide original nav links */
+  nav .nav-links {
+    display: none !important;
+  }
+}
+
+.logo{
+  height: 200px !important;
+}
     </style>
 </head>
 <body>
@@ -757,6 +838,26 @@ nav {
         <a href="donate.html" class="highlight">Donate</a>
       </div>
     </nav>
+
+    <!-- Hamburger icon (mobile only) -->
+<div class="hamburger" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Side slide-in menu (mobile only) -->
+<div class="side-menu" id="sideMenu">
+  <div class="close-btn" onclick="toggleMenu()">
+    <i class="fas fa-times"></i>
+  </div>
+  <a href="index.html">Home</a>
+  <a href="about us.html">About Us</a>
+  <a href="resource&support.html">Resources</a>
+  <a href="events.html">Events</a>
+  <a href="news.html">News</a>
+  <a href="partner.html">Partner with Us</a>
+  <a href="donate.html">Donate</a>
+</div>
+
     
 
     <section class="hero-alt">
@@ -810,37 +911,86 @@ nav {
 </section>
 
 
-<!-- Our Core Values Section -->
+<!-- Tailwind Core Values Dropdown Cards Section -->
 <section class="values-section">
-<div class="values-container">
-  <h2>Our Core Values</h2>
-  <p class="values-intro">
-    At Shield Maidens, we are defenders of digital dignity. Our initiative empowers young women, girls, and marginalized communities to navigate online spaces with confidence, strength, and safety. Guided by our core values, we stand united against Technology-Facilitated Gender-Based Violence (TFGBV) and advocate for a more inclusive, just, and fearless digital world.
-  </p>
-  <div class="values-cards">
-      <div class="value-card">
-          <h3>Empowerment</h3>
-          <p>We uplift young women, girls, and marginalized groups to lead confidently and safely in digital spaces, fighting against TFGBV every step of the way.</p>
+  <details open>
+    <summary>🔥 Our Core Values</summary>
+    <p class="values-intro">
+      At Shield Maidens, we empower young women, girls, and marginalized communities to thrive in digital spaces. United by core values, we combat TFGBV and stand for a just, inclusive, and safe tech world.
+    </p>
+
+    <div class="values-cards">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Empowerment</div>
+            <i class="fas fa-bolt"></i>
+            Empowerment
+          </div>
+          <div class="card-back">
+            We uplift women and girls to confidently and safely lead in digital spaces, fighting TFGBV every step of the way.
+          </div>
+        </div>
       </div>
-      <div class="value-card">
-          <h3>Integrity</h3>
-          <p>At Shield Maidens, we commit to honesty, transparency, and ethical action, ensuring trust within our community and beyond.</p>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Integrity</div>
+            <i class="fas fa-shield-alt"></i>
+            Integrity
+          </div>
+          <div class="card-back">
+            We are honest, ethical, and transparent in everything we do, building trust with our communities.
+          </div>
+        </div>
       </div>
-      <div class="value-card">
-          <h3>Advocacy</h3>
-          <p>We amplify voices against Technology Facilitated Violence, fighting for justice and safer, more inclusive online environments.</p>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Advocacy</div>
+            <i class="fas fa-bullhorn"></i>
+            Advocacy
+          </div>
+          <div class="card-back">
+            We amplify marginalized voices and demand policies and protections that keep all users safe online.
+          </div>
+        </div>
       </div>
-      <div class="value-card">
-          <h3>Solidarity</h3>
-          <p>We stand united with survivors, communities, and allies to promote resilience, healing, and collective action against TFGBV.</p>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Solidarity</div>
+            <i class="fas fa-hands-helping"></i>
+            Solidarity
+          </div>
+          <div class="card-back">
+            We stand with survivors and allies to build a community rooted in strength and resilience.
+          </div>
+        </div>
       </div>
-      <div class="value-card">
-          <h3>Inclusion</h3>
-          <p>We ensure everyone, including persons with disabilities, has a safe space to learn, grow, and thrive in the digital world.</p>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="sticker">Inclusion</div>
+            <i class="fas fa-universal-access"></i>
+            Inclusion
+          </div>
+          <div class="card-back">
+            We celebrate diversity and ensure access for all, including those with disabilities, to participate equally in tech.
+          </div>
+        </div>
       </div>
-  </div>
-</div>
+    </div>
+  </details>
 </section>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 
 
 
@@ -971,6 +1121,15 @@ nav {
     images[current].classList.add('active');
   }, 4000); // change every 4 seconds
 
+
+  function toggleMenu() {
+    const menu = document.getElementById('sideMenu');
+    if (menu.style.left === '0px') {
+      menu.style.left = '-250px';
+    } else {
+      menu.style.left = '0px';
+    }
+  }
 </script>
 
 
