@@ -835,10 +835,58 @@ nav {
   }
 }
 
-
-.logo{
-  height: 200px !important;
+/* Default (Desktop) logo size */
+.logo-link img {
+  height: 45px;
+  display: block;
+  object-fit: contain;
 }
+
+/* 📱 Smaller logo on phones */
+@media (max-width: 768px) {
+  .logo-link img {
+    height: 35px;
+  }
+}
+
+/* Desktop - big logo */
+.logo {
+  height: 200px !important;
+  object-fit: contain;
+}
+
+/* 📱 Mobile - smaller logo */
+@media (max-width: 768px) {
+  .logo {
+    height: 65px !important; /* Or change to 60px if you prefer */
+  }
+}
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .about-image,
+  .about-text {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
     </style>
 </head>
 <body>
