@@ -825,29 +825,19 @@ nav {
 
   /* OUR TEAM: Stack members vertically on phones */
   .team-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: center !important;
   }
 
   .team-member {
-    width: 90%;
-    margin-bottom: 20px;
+    width: 90% !important;
+    margin-bottom : 20px;
   }
 }
 
-/* Default (Desktop) logo size */
-.logo-link img {
-  height: 45px;
-  display: block;
-  object-fit: contain;
-}
 
-/* 📱 Smaller logo on phones */
-@media (max-width: 768px) {
-  .logo-link img {
-    height: 35px;
-  }
-}
+
+
 
 /* Desktop - big logo */
 .logo {
@@ -855,10 +845,21 @@ nav {
   object-fit: contain;
 }
 
-/* 📱 Mobile - smaller logo */
+/* ✅ Mobile-specific fixes */
 @media (max-width: 768px) {
   .logo {
-    height: 65px !important; /* Or change to 60px if you prefer */
+    height: 100px !important; /* Smaller logo for phones */
+  }
+
+  .hamburger {
+    font-size: 24px;
+    display: block;
+    align-self: center; /* Keeps it aligned vertically */
+  }
+
+  .logo-link {
+    justify-content: flex-start;
+    align-items: center;
   }
 }
 @media (max-width: 768px) {
