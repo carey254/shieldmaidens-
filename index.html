@@ -37,7 +37,27 @@
             <a href="donate.html" class="highlight">Donate</a>
         </div>
     </nav>
-    
+    <!-- Hamburger Icon (Mobile Only) -->
+<div class="hamburger" onclick="openMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Mobile Sidebar Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about us.html">About Us</a></li>
+    <li><a href="resource&support.html">Resources</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="partner.html">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight">Donate</a></li>
+  </ul>
+</div>
+
     
     <div id="eventPopup" class="popup">
     <div class="popup-content">
@@ -373,7 +393,16 @@
       </div>
   </footer>
   
-    
+  <script>
+    function openMenu() {
+      document.getElementById("mobileMenu").classList.add("active");
+    }
+  
+    function closeMenu() {
+      document.getElementById("mobileMenu").classList.remove("active");
+    }
+  </script>
+  
 
 
     <script src="script.js"></script>
