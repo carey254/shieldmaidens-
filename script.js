@@ -61,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function() {
     popup.style.display = "block";
   });
       
-  
+  popup.classList.add("show");
+
   // Close the pop-up
   function closePopup() {
     document.getElementById("eventPopup").style.display = "none";

@@ -12,9 +12,8 @@ body {
 .popup {
   display: none;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Perfect centering */
+  inset: 0; /* replaces top, left, right, bottom with one rule */
+  margin: auto; /* centers horizontally and vertically */
   background-color: #fff;
   border: 2px solid #ff6600;
   border-radius: 10px;
@@ -24,7 +23,18 @@ body {
   width: fit-content;
   max-width: 90%;
   pointer-events: auto;
+  height: fit-content;
 }
+.popup {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup.show {
+  display: block;
+  opacity: 1;
+}
+
 
 /* Stylish popup content */
 .popup-content {
@@ -1838,7 +1848,7 @@ button:hover {
     padding: 0;
   }
   .logo {
-    height: 66px !important;
+    height: 100px !important;
     margin: 0;
     padding: 0;
     vertical-align: middle;
