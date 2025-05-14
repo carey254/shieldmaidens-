@@ -1831,13 +1831,34 @@ button:hover {
   .nav-links {
     display: none !important;
   }
+  .logo-link {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    height: 66px !important;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+  }
 
   nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-right: 60px; /* space for hamburger */
+    align-items: center; /* ✅ Vertically align logo + hamburger */
+    padding: 10px 20px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   }
+  
 
   .logo-link img {
     height: 45px !important;
