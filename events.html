@@ -541,49 +541,134 @@ h2 {
     display: block;
   }
   
+ 
+  
+  /* Hamburger Icon (Mobile Only) */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #ff4500;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+/* Sidebar Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transition: 0.3s ease-in-out;
+  z-index: 1050;
+  padding: 20px;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  font-size: 26px;
+  color: #ff4500;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #222;
+}
+
+.mobile-menu ul li a.highlight {
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* Show hamburger and hide desktop links on mobile */
+@media (max-width: 768px) {
   .hamburger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
+    display: block;
   }
-  
-  /* Responsive Mobile Menu */
-  @media (max-width: 768px) {
-    .hamburger {
-      display: block;
-    }
-  
-    .nav-links {
-      position: fixed;
-      left: -100%;
-      top: 0;
-      height: 100%;
-      width: 75%;
-      max-width: 300px;
-      background-color: white;
-      flex-direction: column;
-      gap: 20px;
-      padding: 60px 20px;
-      transition: left 0.3s ease;
-      box-shadow: 4px 0 6px rgba(0,0,0,0.1);
-    }
-  
-    .nav-links.open {
-      left: 0;
-    }
-  
-    .dropdown-content {
-      position: static;
-      box-shadow: none;
-    }
-  
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+
+  .nav-links {
+    display: none !important;
   }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .logo-link img {
+    height: 65px !important;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .about-image,
+  .about-text {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
   
   
 </style>
@@ -618,6 +703,29 @@ h2 {
             <a href="donate.html" class="highlight">Donate</a>
         </div>
     </nav>
+
+    <!-- Hamburger Icon (Mobile Only) -->
+<div class="hamburger" onclick="openMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Mobile Sidebar Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <div class="menu-header">
+    <span class="close-btn" onclick="closeMenu()">&times;</span>
+  </div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about us.html">About Us</a></li>
+    <li><a href="resource&support.html">Resources</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="partner.html">Partner with Us</a></li>
+    <li><a href="donate.html" class="highlight">Donate</a></li>
+  </ul>
+</div>
+
+
     <h2>Upcoming and Past Events Calendar</h2>
     <div id="calendar"></div>
 
@@ -754,9 +862,13 @@ h2 {
             });
         });
 
-        function toggleMenu() {
-            document.getElementById("navLinks").classList.toggle("open");
-          }
+        function openMenu() {
+          document.getElementById("mobileMenu").classList.add("active");
+        }
+      
+        function closeMenu() {
+          document.getElementById("mobileMenu").classList.remove("active");
+        }
     </script>
 
 </body>
