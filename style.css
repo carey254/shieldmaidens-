@@ -1882,3 +1882,39 @@ button:hover {
     height: 65px !important;
   }
 }
+
+
+
+/* Center the popup in the middle of the screen */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfect centering */
+  background-color: #fff;
+  border: 1px solid #ff6600;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
+  z-index: 1000;
+  width: fit-content;
+  max-width: 90%;
+  pointer-events: auto;
+}
+
+/* Stylish popup content */
+.popup-content {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: 18px;
+  color: orange;
+  text-align: center;
+}
+
+/* Close button styling */
+.close-btn {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #aaa;
+}

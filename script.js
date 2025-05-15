@@ -1,58 +1,88 @@
 document.addEventListener("DOMContentLoaded", function () {
   let event = {
-    title: "Intro to Cyber Attacks",
-    date: new Date("2025-05-15T19:00:00"),
+    title: "Introduction to Cyber Attacks",
+    date: new Date("2025-05-15T19:00:00"), // Adjust your event date/time here
     link: "https://calendar.app.google/Uas6NuqhVGtgV6Vz9"
   };
 
+  let now = new Date();
   let popup = document.getElementById("eventPopup");
+  let titleEl = document.getElementById("eventTitle");
   let messageEl = document.getElementById("eventMessage");
   let linkEl = document.getElementById("eventLink");
   let reminderBtn = document.getElementById("setReminder");
 
-  function updatePopup() {
-    let now = new Date();
-    let timeDiff = event.date - now;
-    let hoursLeft = timeDiff / (1000 * 60 * 60);
+  let timeDiff = event.date - now;
+  let hoursLeft = timeDiff / (1000 * 60 * 60);
+  let minutesLeft = timeDiff / (1000 * 60);
 
-    if (hoursLeft <= 0.5) {
-      messageEl.innerText = "Starting in less than 30 minutes!";
-    } else if (hoursLeft <= 4) {
-      messageEl.innerText = `Session starts in ${Math.floor(hoursLeft)} hour(s)`;
+  titleEl.innerText = "Shield Maidens 2024!";
+
+  // Display popup if event is in the future
+  if (!event || event.date < now) {
+    messageEl.innerText = "There are no upcoming events at this time.";
+    linkEl.style.display = "none";
+    reminderBtn.style.display = "none";
+  } else {
+    // Detect 1-day-before message
+    if (hoursLeft <= 48 && now.getDate() !== event.date.getDate()) {
+      messageEl.innerText = "🚨 Just a day to go! Set a reminder so you don’t miss it.";
+      reminderBtn.style.display = "block";
+      linkEl.style.display = "none";
+
     } else if (hoursLeft <= 24) {
-      messageEl.innerText = `Join us today at 7PM: ${event.title}`;
-    } else {
-      messageEl.innerText = "An exciting session is coming. Stay tuned!";
-    }
+      messageEl.innerText = "Join us later today for an exciting session!";
+      reminderBtn.style.display = "none";
 
-    linkEl.href = event.link;
-    linkEl.style.display = "inline-block";
-    reminderBtn.style.display = "inline-block";
+      if (event.link) {
+        linkEl.style.display = "block";
+        linkEl.href = event.link;
+        linkEl.innerText = "Join Now";
+      } else {
+        linkEl.style.display = "none";
+      }
+
+    } else {
+      messageEl.innerText = "We have an exciting session coming up. Stay tuned!";
+      reminderBtn.style.display = "block";
+      linkEl.style.display = "none";
+    }
   }
 
-  updatePopup();
+  // Show popup box
+  popup.style.display = "block";
 
-  reminderBtn.onclick = function () {
-    localStorage.setItem("eventReminder", event.date.toString());
-    alert("Reminder set. We'll notify you 30 minutes before the session!");
-  };
-
-  setInterval(() => {
-    let reminderStr = localStorage.getItem("eventReminder");
-    if (!reminderStr) return;
-    let reminderTime = new Date(reminderStr);
-    let now = new Date();
-    let minutesLeft = (reminderTime - now) / (1000 * 60);
-    if (minutesLeft <= 30 && minutesLeft > 28) {
-      alert("⏰ Session starts in 30 minutes. Please be ready.");
-      localStorage.removeItem("eventReminder");
-    }
-  }, 60000);
+  // If reminder already set, and it’s within 30 minutes, trigger a notification
+  if (localStorage.getItem("eventReminder") === "set" && minutesLeft <= 30 && minutesLeft > 0) {
+    sendReminderNotification("Your Shield Maidens session starts in 30 minutes! Be ready.");
+    localStorage.removeItem("eventReminder"); // clear reminder after showing
+  }
 });
 
+// Close popup
 function closePopup() {
   document.getElementById("eventPopup").style.display = "none";
 }
+
+// Set reminder and store in localStorage
+function setReminder() {
+  alert("Reminder set! We'll notify you 30 minutes before the session.");
+  localStorage.setItem("eventReminder", "set");
+}
+
+// Notification trigger
+function sendReminderNotification(message) {
+  if (Notification.permission === "granted") {
+    new Notification(message);
+  } else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(permission => {
+      if (permission === "granted") {
+        new Notification(message);
+      }
+    });
+  }
+}
+
 
   
  
