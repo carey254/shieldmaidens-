@@ -717,6 +717,193 @@ button:disabled {
 }
 
 
+/* Hide hamburger & menu by default */
+.hamburger,
+.side-menu {
+  display: none;
+}
+
+/* Mobile styles only */
+@media (max-width: 768px) {
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    z-index: 1001;
+    display: block;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .side-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .side-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 15px 0;
+  }
+
+  .close-btn {
+    align-self: flex-end;
+    font-size: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  /* Hide original nav links */
+  nav .nav-links {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* WHAT WE DO: Stack items vertically on phones */
+  .what-we-do-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .what-we-do-item {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  /* OUR TEAM: Stack members vertically on phones */
+  .team-container {
+    flex-direction: column !important;
+    align-items:center
+  }
+
+  .team-member {
+    width: 90% !important;
+    margin-bottom : 20px;
+  }
+}
+
+
+
+
+
+/* Desktop - big logo */
+.logo {
+  height: 200px !important;
+  object-fit: contain;
+}
+/* Hamburger Icon (Mobile Only) */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #ff4500;
+  z-index: 1100;
+  cursor: pointer;
+}
+
+/* Sidebar Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 75%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transition: 0.3s ease-in-out;
+  z-index: 1050;
+  padding: 20px;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  font-size: 26px;
+  color: #ff4500;
+  cursor: pointer;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 15px;
+}
+
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #222;
+}
+
+.mobile-menu ul li a.highlight {
+  background-color: #ff4500;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* Show hamburger and hide desktop links on mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .logo-link img {
+    height: 65px !important;
+    margin: 0;
+    padding: 0;
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+}
   </style>
 </head>
 
@@ -747,7 +934,26 @@ button:disabled {
   </div>
 </nav>
 
-
+   <!-- Hamburger Icon (Mobile Only) -->
+   <div class="hamburger" onclick="openMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  
+  <!-- Mobile Sidebar Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="menu-header">
+      <span class="close-btn" onclick="closeMenu()">&times;</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="resource&support.html">Resources</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="partner.html">Partner with Us</a></li>
+      <li><a href="donate.html" class="highlight">Donate</a></li>
+    </ul>
+  </div>
 
  <!-- Hero Slide Section -->
 <section class="hero-slide">
@@ -1297,7 +1503,13 @@ document.addEventListener("DOMContentLoaded", () => {
   showCurrentQuestion();
 });
 
+function openMenu() {
+  document.getElementById("mobileMenu").classList.add("active");
+}
 
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.remove("active");
+}
 
 
 

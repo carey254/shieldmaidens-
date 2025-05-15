@@ -8,6 +8,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   
   
@@ -58,16 +59,19 @@
   </ul>
 </div>
 
-    
-    <div id="eventPopup" class="popup">
-    <div class="popup-content">
-        <span class="close-btn" onclick="closePopup()">&times;</span>
-        <h2 id="eventTitle"></h2>
-        <p id="eventMessage"></p>
-        <a id="eventLink" href="#" target="_blank" style="display:none;">Join Event</a>
-        <button id="setReminder" style="display:none;" onclick="setReminder()">Set Reminder</button>
-    </div>
+
+
+
+
+
+<div class="popup" id="eventPopup">
+  <button class="close-btn" onclick="closePopup()">&times;</button>
+  <h2>Shield Maidens 2024!</h2>
+  <p id="eventMessage">Loading event details...</p>
+  <a id="eventLink" class="small-btn" href="#" target="_blank" style="display:none;">Join</a>
+  <button id="setReminder" class="small-btn" style="display:none;">  🔔 Remind Me</button>
 </div>
+
 
 
 

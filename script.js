@@ -1,86 +1,59 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Simulate fetching event details (Replace with real API/database call)
-    
-    let event = { 
-      title: "Introduction to Cyber Attacks",
-      date: new Date("2025-04-29T19:00:00"), // April 29, 2025 at 7:00 PM EAT
-      link: "" // No link yet
-    };
-    
+document.addEventListener("DOMContentLoaded", function () {
+  let event = {
+    title: "Intro to Cyber Attacks",
+    date: new Date("2025-05-15T19:00:00"),
+    link: "https://calendar.app.google/Uas6NuqhVGtgV6Vz9"
+  };
+
+  let popup = document.getElementById("eventPopup");
+  let messageEl = document.getElementById("eventMessage");
+  let linkEl = document.getElementById("eventLink");
+  let reminderBtn = document.getElementById("setReminder");
+
+  function updatePopup() {
     let now = new Date();
-    let popup = document.getElementById("eventPopup");
-    let titleEl = document.getElementById("eventTitle");
-    let messageEl = document.getElementById("eventMessage");
-    let linkEl = document.getElementById("eventLink");
-    let reminderBtn = document.getElementById("setReminder");
+    let timeDiff = event.date - now;
+    let hoursLeft = timeDiff / (1000 * 60 * 60);
 
-    if (!event || event.date < now) {
-      titleEl.innerText = "Shield Maidens 2024!";
-      messageEl.innerText = "There are no upcoming events at this time.";
-      linkEl.style.display = "none";
-      reminderBtn.style.display = "none";
-    
-  
+    if (hoursLeft <= 0.5) {
+      messageEl.innerText = "Starting in less than 30 minutes!";
+    } else if (hoursLeft <= 4) {
+      messageEl.innerText = `Session starts in ${Math.floor(hoursLeft)} hour(s)`;
+    } else if (hoursLeft <= 24) {
+      messageEl.innerText = `Join us today at 7PM: ${event.title}`;
     } else {
-      let timeDiff = event.date - now;
-      let hoursLeft = timeDiff / (1000 * 60 * 60);
-    
-      titleEl.innerText = event.title;
-    
-      if (hoursLeft <= 48 && now.getDate() !== event.date.getDate()) {
-        // It's within 48 hours and tomorrow
-        messageEl.innerText = "Join us tomorrow for an exciting session!";
-        
-        if (event.link) {
-          linkEl.style.display = "block";
-          linkEl.href = event.link;
-          linkEl.innerText = "Click here to join";
-        } else {
-          linkEl.style.display = "none"; // No link yet
-        }
-    
-      } else if (hoursLeft <= 24) {
-        // It's today, less than 24 hours left
-        messageEl.innerText = "Join us for an exciting session later today!";
-        
-        if (event.link) {
-          linkEl.style.display = "block";
-          linkEl.href = event.link;
-          linkEl.innerText = "Click here to join";
-        } else {
-          linkEl.style.display = "none"; 
-        }
-    
-      } else {
-        messageEl.innerText = "We have an exciting session coming up. Stay tuned!";
-        reminderBtn.style.display = "block";
-        linkEl.style.display = "none"; 
-      }
+      messageEl.innerText = "An exciting session is coming. Stay tuned!";
     }
-    
-    popup.style.display = "block";
-  });
-      
-  popup.classList.add("show");
 
-  // Close the pop-up
-  function closePopup() {
-    document.getElementById("eventPopup").style.display = "none";
+    linkEl.href = event.link;
+    linkEl.style.display = "inline-block";
+    reminderBtn.style.display = "inline-block";
   }
-  
-  // Set a reminder (Example using local storage)
-  function setReminder() {
-    alert("Reminder set! You will receive a notification before the event.");
-    localStorage.setItem("eventReminder", "set");
-  }
-  
-  // 'Read More' functionality
-  document.querySelectorAll('.read-more').forEach(link => {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      document.getElementById('more-info').style.display = 'block';
-    });
-  });
+
+  updatePopup();
+
+  reminderBtn.onclick = function () {
+    localStorage.setItem("eventReminder", event.date.toString());
+    alert("Reminder set. We'll notify you 30 minutes before the session!");
+  };
+
+  setInterval(() => {
+    let reminderStr = localStorage.getItem("eventReminder");
+    if (!reminderStr) return;
+    let reminderTime = new Date(reminderStr);
+    let now = new Date();
+    let minutesLeft = (reminderTime - now) / (1000 * 60);
+    if (minutesLeft <= 30 && minutesLeft > 28) {
+      alert("⏰ Session starts in 30 minutes. Please be ready.");
+      localStorage.removeItem("eventReminder");
+    }
+  }, 60000);
+});
+
+function closePopup() {
+  document.getElementById("eventPopup").style.display = "none";
+}
+
   
  
   
