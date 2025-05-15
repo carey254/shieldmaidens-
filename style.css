@@ -747,95 +747,138 @@ h2 {
    
 }
 
-#next-session {
-  width: 100vw; /* full viewport width */
-  margin: 0;
-  padding: 40px 0;
-  background-color: #f9f9f9; /* optional for contrast */
+/* Container and Carousel Styles */
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
-#next-session h2 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.session-container {
+.session-carousel {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 1rem;
+  animation: slide-left 60s linear infinite; /* slower animation */
+  width: max-content;
 }
 
+@keyframes slide-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* Session Card Style */
 .session-card {
-  flex: 1 1 300px;
-  background: white;
-  padding: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  flex: 0 0 300px;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s;
+}
+
+.session-card:hover {
+  transform: scale(1.02);
 }
 
 .session-card img {
   width: 100%;
-  height: auto;
+  height: 160px;
+  object-fit: cover;
   border-radius: 8px;
+}
+
+.session-card p {
+  font-size: 14px;
+  color: #333;
+  margin: 0.5rem 0;
 }
 
 .event-link {
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background: #007BFF;
-  color: white;
+  padding: 0.6rem 1rem;
+  margin-top: 0.5rem;
+  background-color: orangered;
+  color: #fff;
   text-decoration: none;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 .event-link:hover {
-  background: #0056b3;
+  background-color: #e55300;
 }
 
-.session-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.session-card {
-    background: #fff;
-    padding: 15px;
-
-    width: 280px;
- 
+/* Past Session Style */
+.session-card.past .event-link {
+  background-color: #aaa;
+  pointer-events: none;
+  cursor: default;
 }
 
+.session-card.past .event-link:hover {
+  background-color: #aaa;
+}
 
-.session-card img {
-    width: 100%;
- 
-    height: 150px;
-    object-fit: cover;
+/* Upcoming Session Style */
+.session-card.upcoming .event-link {
+  background-color: #28a745;
 }
-.session-card p {
-    font-size: 14px;
-    color: #333;
+
+.session-card.upcoming .event-link:hover {
+  background-color: #218838;
 }
-.event-link {
-   
-    text-decoration: none;
-    background-color: orangered;
-    color: #fff;
-    padding: 10px;
-  
-    margin-top: 10px;
-    transition: background 0.3s;
+
+/* Animation */
+@keyframes slide-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
-.event-link:hover {
-    background-color: #0056b3;
+
+/* Responsive Design */
+
+/* Small Screens (Phones) */
+@media (max-width: 600px) {
+  .session-carousel {
+    flex-direction: column;
+    animation: none;
+  }
+
+  .session-card {
+    flex: 1 1 auto;
+    margin: 0 auto 1rem;
+    width: 90%;
+  }
 }
+
+/* Medium Screens (Tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .session-carousel {
+    flex-wrap: nowrap;
+    animation: slide-left 25s linear infinite;
+  }
+
+  .session-card {
+    flex: 0 0 260px;
+  }
+}
+
+/* Large Screens (Desktops) */
+@media (min-width: 1025px) {
+  .session-card {
+    flex: 0 0 300px;
+  }
+}
+
 /* Contact Form */
 form {
     text-align: center;

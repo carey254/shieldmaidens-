@@ -85,7 +85,9 @@ function sendReminderNotification(message) {
 
 
   
- 
+const carousel = document.querySelector('.session-carousel');
+carousel.innerHTML += carousel.innerHTML; // Duplicate for seamless scroll
+
   
   
   // Events page
